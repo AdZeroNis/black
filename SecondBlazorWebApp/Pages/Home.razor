@@ -1,0 +1,76 @@
+﻿@page "/"
+@inject HttpClient HttpClient
+
+<PageTitle>Home</PageTitle>
+
+<h1>Products List</h1>
+@if (Products?.Count() > 0)
+{
+    <table>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                CreatedAt
+            </th>
+            <th>
+                ImageFileName
+            </th>
+        </tr>
+        @foreach (var item in Products)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    @item.CreatedAt
+                </td>
+                <td>
+                    @item.ImageFileName
+                </td>
+            </tr>
+        }
+    </table>
+   
+}
+    
+
+@code {
+    IEnumerable<Product> Products;
+    protected override async Task OnInitializedAsync()
+    {
+        Products = await HttpClient.GetFromJsonAsync<IEnumerable<Product>>("Products/GetProducts");
+        await base.OnInitializedAsync();
+    }
+
+
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int Price { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public string ImageFileName { get; set; }
+    }
+}
