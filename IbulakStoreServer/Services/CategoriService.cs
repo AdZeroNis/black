@@ -36,7 +36,7 @@ namespace IbulakStoreServer.Services
             Categori? oldCategori = await _context.Categoris.FindAsync(categori.Id);
             if (oldCategori is null)
             {
-                throw new Exception("محصولی با این شناسه پیدا نشد.");
+                throw new Exception("دسته بندی محصول با این شناسه پیدا نشد.");
             }
             oldCategori.Name = categori.Name;
             oldCategori.ImageFileName = categori.ImageFileName;
@@ -48,7 +48,7 @@ namespace IbulakStoreServer.Services
             Categori? categori = await _context.Categoris.FindAsync(id);
             if (categori is null)
             {
-                throw new Exception("محصولی با این شناسه پیدا نشد.");
+                throw new Exception("دسته بندی محصولی با این شناسه پیدا نشد.");
             }
             _context.Categoris.Remove(categori);
             await _context.SaveChangesAsync();

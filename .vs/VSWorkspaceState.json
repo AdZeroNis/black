@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\IbulakStoreServer",
-    "\\IbulakStoreServer\\Services"
+    "\\IbulakStoreServer\\Data",
+    "\\IbulakStoreServer\\Data\\Entities"
   ],
-  "SelectedNode": "\\IbulakStoreServer\\Program.cs",
+  "SelectedNode": "\\IbulakStoreServer\\Data\\Entities\\Categori.cs",
   "PreviewInSolutionExplorer": false
 }
