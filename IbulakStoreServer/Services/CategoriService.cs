@@ -38,9 +38,7 @@ namespace IbulakStoreServer.Services
             {
                 throw new Exception("محصولی با این شناسه پیدا نشد.");
             }
-            oldCategori.Price = categori.Price;
             oldCategori.Name = categori.Name;
-            oldCategori.Description = categori.Description;
             oldCategori.ImageFileName = categori.ImageFileName;
             _context.Categoris.Update(oldCategori);
             await _context.SaveChangesAsync();

@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\IbulakStoreServer\\Data\\Domain",
-    "\\IbulakStoreServer\\Data\\Entities",
+    "\\IbulakStoreServer",
     "\\IbulakStoreServer\\Services"
   ],
-  "SelectedNode": "\\SecondBlazorWebApp.sln",
+  "SelectedNode": "\\IbulakStoreServer\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

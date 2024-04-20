@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\SecondBlazorWebApp.props" />
+</Project>
