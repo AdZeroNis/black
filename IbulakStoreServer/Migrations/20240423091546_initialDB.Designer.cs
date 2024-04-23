@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IbulakStoreServer.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20240420055714_inationalDB")]
-    partial class inationalDB
+    [Migration("20240423091546_initialDB")]
+    partial class initialDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

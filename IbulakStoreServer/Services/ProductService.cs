@@ -28,6 +28,12 @@ namespace IbulakStoreServer.Services
         }
         public async Task AddAsync(Product product)
         {
+            Categori? categori = await _context.Categoris.FindAsync(product.CategoriId);
+            if (categori is null)
+            {
+                throw new Exception("دسته بندی محصول با این شناسه پیدا نشد.");
+            }
+            product.Categori = categori;
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
         }
@@ -42,6 +48,8 @@ namespace IbulakStoreServer.Services
             oldProduct.Name=product.Name;
             oldProduct.Description = product.Description;
             oldProduct.ImageFileName = product.ImageFileName;
+            oldProduct.Count = product.Count;
+            oldProduct.CategoriId = product.CategoriId;
             _context.Products.Update(oldProduct);
             await _context.SaveChangesAsync();
         }
