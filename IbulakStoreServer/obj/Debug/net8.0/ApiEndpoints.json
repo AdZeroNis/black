@@ -133,8 +133,98 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.ProductsController",
+    "Method": "GetsByCategory",
+    "RelativePath": "Products/GetsByCategory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.ProductsController",
     "Method": "Get",
     "RelativePath": "Products/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.UserController",
+    "Method": "Gets",
+    "RelativePath": "User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.UserController",
+    "Method": "Add",
+    "RelativePath": "User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "IbulakStoreServer.Data.Entities.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.UserController",
+    "Method": "Edit",
+    "RelativePath": "User",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "IbulakStoreServer.Data.Entities.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "User",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.UserController",
+    "Method": "Get",
+    "RelativePath": "User/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
