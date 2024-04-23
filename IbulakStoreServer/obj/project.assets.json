@@ -2989,19 +2989,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sepid\\.nuget\\packages\\": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
       "projectName": "IbulakStoreServer",
-      "projectPath": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
-      "packagesPath": "C:\\Users\\Sepid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\obj\\",
+      "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sepid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
