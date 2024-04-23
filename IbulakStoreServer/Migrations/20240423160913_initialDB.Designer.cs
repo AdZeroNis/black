@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IbulakStoreServer.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20240423091546_initialDB")]
+    [Migration("20240423160913_initialDB")]
     partial class initialDB
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace IbulakStoreServer.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
 
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Categori", b =>
+            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace IbulakStoreServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categoris");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("IbulakStoreServer.Data.Entities.Product", b =>
@@ -45,10 +45,7 @@ namespace IbulakStoreServer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoriId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Count")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedAt")
@@ -71,25 +68,7 @@ namespace IbulakStoreServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriId");
-
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Product", b =>
-                {
-                    b.HasOne("IbulakStoreServer.Data.Entities.Categori", "Categoris")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoriId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Categoris");
-                });
-
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Categori", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

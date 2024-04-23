@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "IbulakStoreServer.Controllers.CategoriController",
+    "ContainingType": "IbulakStoreServer.Controllers.CategoriesController",
     "Method": "Gets",
-    "RelativePath": "Categori",
+    "RelativePath": "Categories",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,41 +10,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "IbulakStoreServer.Controllers.CategoriController",
+    "ContainingType": "IbulakStoreServer.Controllers.CategoriesController",
     "Method": "Add",
-    "RelativePath": "Categori",
+    "RelativePath": "Categories",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "categori",
-        "Type": "IbulakStoreServer.Data.Entities.Categori",
+        "Name": "category",
+        "Type": "IbulakStoreServer.Data.Entities.Category",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "IbulakStoreServer.Controllers.CategoriController",
+    "ContainingType": "IbulakStoreServer.Controllers.CategoriesController",
     "Method": "Edit",
-    "RelativePath": "Categori",
+    "RelativePath": "Categories",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "categori",
-        "Type": "IbulakStoreServer.Data.Entities.Categori",
+        "Name": "category",
+        "Type": "IbulakStoreServer.Data.Entities.Category",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "IbulakStoreServer.Controllers.CategoriController",
+    "ContainingType": "IbulakStoreServer.Controllers.CategoriesController",
     "Method": "Delete",
-    "RelativePath": "Categori",
+    "RelativePath": "Categories",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -58,9 +58,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "IbulakStoreServer.Controllers.CategoriController",
+    "ContainingType": "IbulakStoreServer.Controllers.CategoriesController",
     "Method": "Get",
-    "RelativePath": "Categori/{id}",
+    "RelativePath": "Categories/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

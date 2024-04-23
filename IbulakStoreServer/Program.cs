@@ -25,9 +25,8 @@ builder.Services.AddDbContext<StoreDbContext>(options =>
   options.UseSqlite(builder.Configuration.GetConnectionString("WebApiDatabase")));
 
 
-
 builder.Services.AddScoped<ProductService>();
-builder.Services.AddScoped<CategoriService>();
+builder.Services.AddScoped<CategoryService>();
 
 var app = builder.Build();
 
@@ -43,7 +42,6 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     var context = services.GetRequiredService<StoreDbContext>();
-    //context.Database.EnsureCreated();
     context.Database.Migrate();
     // DbInitializer.Initialize(context);
 }

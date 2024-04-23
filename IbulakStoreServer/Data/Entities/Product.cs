@@ -9,12 +9,11 @@ namespace IbulakStoreServer.Data.Entities
         public string Description { get; set; }
         public int Count { get; set; }
         public int Price { get; set; }
-        [ForeignKey("Categori")]
-        public int CategoriId { get; set; }
-
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
         public DateTime CreatedAt { get; set; }
-        public string ImageFileName { get; set;}
+        public string ImageFileName { get; set; }
 
-        public virtual Categori Categori { get; set; } = default!;
+        public virtual Category Category { get; set; } = default!;
     }
 }
