@@ -29,6 +29,12 @@ namespace IbulakStoreServer.Controllers
             var result = await _productService.GetsAsync();
             return Ok(result);
         }
+        [HttpGet("GetsByCategory")]
+        public async Task<IActionResult> GetsByCategory(int categoryId)
+        {
+            var result = await _productService.GetsByCategoryAsync(categoryId);
+            return Ok(result);
+        }
         [HttpPost]
         public async Task<IActionResult> Add(Product product)
         {
@@ -36,7 +42,7 @@ namespace IbulakStoreServer.Controllers
             return Ok();
         }
         [HttpPut]
-        public async Task<IActionResult> Edit([FromBody]Product product)
+        public async Task<IActionResult> Edit([FromBody] Product product)
         {
             await _productService.EditAsync(product);
             return Ok();
