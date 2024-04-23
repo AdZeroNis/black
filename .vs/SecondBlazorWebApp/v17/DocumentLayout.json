@@ -1,58 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Sepid\\Desktop\\black\\",
+  "WorkspaceRootPath": "C:\\Users\\Asus\\source\\repos\\black\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\services\\basketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\basketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\services\\categoriservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\categoriservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\data\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\data\\entities\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\entities\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\data\\domain\\storedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\domain\\storedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\controllers\\categoricontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\controllers\\categoricontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\data\\entities\\categori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\entities\\categori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\services\\basketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\basketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\data\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\data\\entities\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\entities\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\sepid\\desktop\\black\\ibulakstoreserver\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,173 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BasketService.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Services\\BasketService.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\BasketService.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Services\\BasketService.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Services\\BasketService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Program.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Program.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Program.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Program.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAwwDgAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:55:56.396Z",
+              "WhenOpened": "2024-04-23T18:38:23.113Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Services\\ProductService.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Services\\ProductService.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAQwCgAAAAKAAAA",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\UserService.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Services\\UserService.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAowDgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:54:56.09Z",
+              "WhenOpened": "2024-04-23T18:38:09.288Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CategoriService.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Services\\CategoriService.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\CategoriService.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Services\\CategoriService.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Services\\CategoriService.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBcAAAAHAAAA",
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\ProductService.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Services\\ProductService.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAswEcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:54:29.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BasketController.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Controllers\\BasketController.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\BasketController.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Controllers\\BasketController.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Controllers\\BasketController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAowDkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:53:30.354Z",
+              "WhenOpened": "2024-04-23T18:38:05.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Entities\\Product.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Entities\\Product.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Entities\\Product.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Data\\Entities\\Product.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAcwAgAAAAvAAAA",
+              "Title": "BasketService.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\BasketService.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\BasketService.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\BasketService.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Services\\BasketService.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAA9wF4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:48:02.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Basket.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Entities\\Basket.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Entities\\Basket.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Entities\\Basket.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Data\\Entities\\Basket.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:47:52.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Program.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Program.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Program.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Program.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAYwB4AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:32:12.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "StoreDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Domain\\StoreDbContext.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Domain\\StoreDbContext.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Domain\\StoreDbContext.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Data\\Domain\\StoreDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:32:05.617Z",
+              "WhenOpened": "2024-04-23T18:38:02.313Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Entities\\User.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Data\\Entities\\User.cs",
               "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Data\\Entities\\User.cs",
               "RelativeToolTip": "IbulakStoreServer\\Data\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAxAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:31:03.739Z",
+              "WhenOpened": "2024-04-23T18:37:34.261Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Controllers\\UserController.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Controllers\\UserController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAADwvzMAAAABAAAA",
+              "DocumentIndex": 5,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Data\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Entities\\Product.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Data\\Entities\\Product.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Data\\Entities\\Product.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAmwBMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:32:00.506Z"
+              "WhenOpened": "2024-04-23T18:37:30.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Basket.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Data\\Entities\\Basket.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Entities\\Basket.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Data\\Entities\\Basket.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Data\\Entities\\Basket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T18:37:26.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\UserController.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAkwDMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T18:37:09.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAA5wDgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T18:37:05.373Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "CategoriController.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Controllers\\CategoriController.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\CategoriController.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Controllers\\CategoriController.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Controllers\\CategoriController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAA1wDEAAAABAAAA",
+              "Title": "BasketController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\BasketController.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\BasketController.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\BasketController.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Controllers\\BasketController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAkwDkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:30:55.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Services\\UserService.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Services\\UserService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAA0wDgAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:29:43.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Categori.cs",
-              "DocumentMoniker": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Entities\\Categori.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Entities\\Categori.cs",
-              "ToolTip": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\Data\\Entities\\Categori.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Data\\Entities\\Categori.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:02:44.88Z",
+              "WhenOpened": "2024-04-23T18:36:56.302Z",
               "EditorCaption": ""
             }
           ]
