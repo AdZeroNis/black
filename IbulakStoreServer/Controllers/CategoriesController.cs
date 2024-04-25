@@ -13,7 +13,7 @@ namespace IbulakStoreServer.Controllers
 
         public CategoriesController(CategoryService categoryService)
         {
-            _categoryService = categoryService;
+            _categoryService=categoryService;
         }
 
         [HttpGet("{id}")]

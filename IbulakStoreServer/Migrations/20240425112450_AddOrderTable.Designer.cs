@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IbulakStoreServer.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20240425085414_AddBasketColumn")]
-    partial class AddBasketColumn
+    [Migration("20240425112450_AddOrderTable")]
+    partial class AddOrderTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,6 +61,36 @@ namespace IbulakStoreServer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("IbulakStoreServer.Data.Entities.Product", b =>
@@ -122,13 +152,32 @@ namespace IbulakStoreServer.Migrations
             modelBuilder.Entity("IbulakStoreServer.Data.Entities.Basket", b =>
                 {
                     b.HasOne("IbulakStoreServer.Data.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("Baskets")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("IbulakStoreServer.Data.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Baskets")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Order", b =>
+                {
+                    b.HasOne("IbulakStoreServer.Data.Entities.Product", "Product")
+                        .WithMany("Orders")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IbulakStoreServer.Data.Entities.User", "User")
+                        .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -152,6 +201,20 @@ namespace IbulakStoreServer.Migrations
             modelBuilder.Entity("IbulakStoreServer.Data.Entities.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Product", b =>
+                {
+                    b.Navigation("Baskets");
+
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("IbulakStoreServer.Data.Entities.User", b =>
+                {
+                    b.Navigation("Baskets");
+
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

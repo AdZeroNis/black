@@ -1,46 +1,60 @@
 ﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IbulakStoreServer.Services
 {
     public class BasketService
     {
         private readonly StoreDbContext _context;
+        private List<Basket> basket;
+
+        public int ProductId { get; private set; }
 
         public BasketService(StoreDbContext context)
         {
             _context = context;
         }
-
-        public async Task<List<Basket>> GetBasketsByUserIdAsync(int userId)
+        public async Task<Basket?> GetAsync(int id)
         {
-            return await _context.Baskets.Where(b => b.UserId == userId).ToListAsync();
+            Basket? basket = await _context.Baskets.FindAsync(id);
+            return basket;
         }
-
-        public async Task AddBasketAsync(Basket basket)
+        public async Task<List<Basket>> GetsAsync()
+        {
+            List<Basket> baskets = await _context.Baskets.ToListAsync();
+            return baskets;
+        }
+        public async Task<List<Basket>> GetsByProductAsync(int productId)
+        {
+            List<Basket> baskets = await _context.Baskets.Where(basket => basket.ProductId == ProductId).ToListAsync();
+            return basket;
+        }
+        public async Task AddAsync(Basket basket)
         {
             _context.Baskets.Add(basket);
             await _context.SaveChangesAsync();
         }
-
-        public async Task UpdateBasketAsync(Basket basket)
+        public async Task EditAsync(Basket basket)
         {
-            _context.Baskets.Update(basket);
+            Basket? oldBasket = await _context.Baskets.FindAsync(basket.Id);
+            if (oldBasket is null)
+            {
+                throw new Exception("سبد خریدی  با این شناسه پیدا نشد.");
+            }
+            oldBasket.Count = basket.Count;
+            _context.Baskets.Update(oldBasket);
             await _context.SaveChangesAsync();
         }
-
-        public async Task DeleteBasketAsync(int basketId)
+        public async Task DeleteAsync(int id)
         {
-            var basket = await _context.Baskets.FindAsync(basketId);
-            if (basket != null)
+            Basket? basket = await _context.Baskets.FindAsync(id);
+            if (basket is null)
             {
-                _context.Baskets.Remove(basket);
-                await _context.SaveChangesAsync();
+                throw new Exception("سبد خریدی  با این شناسه پیدا نشد.");
             }
+            _context.Baskets.Remove(basket);
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -4,9 +4,10 @@
     "\\IbulakStoreServer",
     "\\IbulakStoreServer\\Controllers",
     "\\IbulakStoreServer\\Data",
+    "\\IbulakStoreServer\\Data\\Domain",
     "\\IbulakStoreServer\\Data\\Entities",
     "\\IbulakStoreServer\\Services"
   ],
-  "SelectedNode": "\\IbulakStoreServer\\Services\\ProductService.cs",
+  "SelectedNode": "\\SecondBlazorWebApp.sln",
   "PreviewInSolutionExplorer": false
 }

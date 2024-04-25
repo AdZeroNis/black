@@ -6,14 +6,13 @@ namespace IbulakStoreServer.Data.Entities
     public class Basket
     {
         public int Id { get; set; }
+        [ForeignKey("User")]
         public int UserId { get; set; }
-        public int ProductId { get; set; }
         public int Count { get; set; }
+        [ForeignKey("Product")]
+        public int ProductId { get; set; }
 
-        [ForeignKey("UserId")]
-        public User User { get; set; }
-
-        [ForeignKey("ProductId")]
-        public Product Product { get; set; }
+        public virtual User User { get; set; } = default!;
+        public virtual Product Product { get; set; } = default!;
     }
 }

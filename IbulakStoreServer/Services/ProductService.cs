@@ -9,16 +9,16 @@ namespace IbulakStoreServer.Services
         private readonly StoreDbContext _context;
         public ProductService(StoreDbContext context)
         {
-            _context = context;
+            _context=context;
         }
         public Product? Get(int id)
         {
-            Product? product = _context.Products.Find(id);
+            Product? product =  _context.Products.Find(id);
             return product;
         }
         public async Task<Product?> GetAsync(int id)
         {
-            Product? product = await _context.Products.FindAsync(id);
+            Product? product =await _context.Products.FindAsync(id);
             return product;
         }
         public async Task<List<Product>> GetsAsync()
@@ -28,7 +28,7 @@ namespace IbulakStoreServer.Services
         }
         public async Task<List<Product>> GetsByCategoryAsync(int categoryId)
         {
-            List<Product> products = await _context.Products.Where(product => product.CategoryId == categoryId).ToListAsync();
+            List<Product> products = await _context.Products.Where(product=> product.CategoryId== categoryId).ToListAsync();
             return products;
         }
         public async Task AddAsync(Product product)
@@ -49,8 +49,8 @@ namespace IbulakStoreServer.Services
             {
                 throw new Exception("محصولی با این شناسه پیدا نشد.");
             }
-            oldProduct.Price = product.Price;
-            oldProduct.Name = product.Name;
+            oldProduct.Price=product.Price;
+            oldProduct.Name=product.Name;
             oldProduct.Description = product.Description;
             oldProduct.ImageFileName = product.ImageFileName;
             oldProduct.Count = product.Count;

@@ -12,9 +12,10 @@ namespace IbulakStoreServer.Data.Entities
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public DateTime CreatedAt { get; set; }
-        public string ImageFileName { get; set; }
+        public string ImageFileName { get; set;}
 
         public virtual Category Category { get; set; } = default!;
-    
+        public virtual ICollection<Basket> Baskets { get; set; } = new HashSet<Basket>();
+        public virtual ICollection<Order> Orders { get; set; } = new HashSet<Order>();
     }
 }
