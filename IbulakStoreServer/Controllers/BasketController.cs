@@ -1,8 +1,6 @@
 ﻿using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace IbulakStoreServer.Controllers
@@ -11,47 +9,44 @@ namespace IbulakStoreServer.Controllers
     [ApiController]
     public class BasketController : ControllerBase
     {
-        private readonly BasketService _BasketService;
+        private readonly BasketService _basketService;
 
         public BasketController(BasketService basketService)
         {
-            _BasketService = basketService;
+            _basketService = basketService;
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetBasketsByUserId(int userId)
         {
-            var result = await _BasketService.GetAsync(id);
-            return Ok(result);
-        }
-
-        // Corrected method name to match the service method
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var result = await _BasketService.GetAllAsync();
-            return Ok(result);
+            var baskets = await _basketService.GetBasketsByUserIdAsync(userId);
+            return Ok(baskets);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Basket basket)
+        public async Task<IActionResult> AddBasket([FromBody] Basket basket)
         {
-            await _BasketService.AddAsync(basket);
+            await _basketService.AddBasketAsync(basket);
             return Ok();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Edit([FromBody] Basket basket)
+        [HttpPut("{basketId}")]
+        public async Task<IActionResult> UpdateBasket(int basketId, [FromBody] Basket basket)
         {
-            await _BasketService.EditAsync(basket);
-            return Ok();
+            if (basketId != basket.Id)
+            {
+                return BadRequest();
+            }
+
+            await _basketService.UpdateBasketAsync(basket);
+            return NoContent();
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete("{basketId}")]
+        public async Task<IActionResult> DeleteBasket(int basketId)
         {
-            await _BasketService.DeleteAsync(id);
-            return Ok();
+            await _basketService.DeleteBasketAsync(basketId);
+            return NoContent();
         }
     }
 }

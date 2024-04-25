@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IbulakStoreServer.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20240423183214_initialBasket")]
-    partial class initialBasket
+    [Migration("20240425092707_AddCategoryColumn")]
+    partial class AddCategoryColumn
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,13 +122,13 @@ namespace IbulakStoreServer.Migrations
             modelBuilder.Entity("IbulakStoreServer.Data.Entities.Basket", b =>
                 {
                     b.HasOne("IbulakStoreServer.Data.Entities.Product", "Product")
-                        .WithMany("Baskets")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("IbulakStoreServer.Data.Entities.User", "User")
-                        .WithMany("Baskets")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -152,16 +152,6 @@ namespace IbulakStoreServer.Migrations
             modelBuilder.Entity("IbulakStoreServer.Data.Entities.Category", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Product", b =>
-                {
-                    b.Navigation("Baskets");
-                });
-
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.User", b =>
-                {
-                    b.Navigation("Baskets");
                 });
 #pragma warning restore 612, 618
         }

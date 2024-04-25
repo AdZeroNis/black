@@ -30,6 +30,7 @@ builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<BasketService>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -12,6 +12,7 @@ namespace IbulakStoreServer.Data.Domain
         public DbSet<User> Users { get; set; }
         public DbSet<Basket> Baskets { get; set; }
 
+
         public StoreDbContext(DbContextOptions<StoreDbContext> options)
             : base(options)
         {

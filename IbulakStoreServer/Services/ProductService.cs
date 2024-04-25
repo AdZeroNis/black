@@ -53,7 +53,7 @@ namespace IbulakStoreServer.Services
             oldProduct.Name = product.Name;
             oldProduct.Description = product.Description;
             oldProduct.ImageFileName = product.ImageFileName;
-            //oldProduct.Count = product.Count;
+            oldProduct.Count = product.Count;
             oldProduct.CategoryId = product.CategoryId;
             _context.Products.Update(oldProduct);
             await _context.SaveChangesAsync();

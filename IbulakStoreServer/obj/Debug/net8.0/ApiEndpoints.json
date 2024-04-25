@@ -1,17 +1,7 @@
 [
   {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
-    "Method": "GetAll",
-    "RelativePath": "Basket",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "IbulakStoreServer.Controllers.BasketController",
-    "Method": "Add",
+    "Method": "AddBasket",
     "RelativePath": "Basket",
     "HttpMethod": "POST",
     "IsController": true,
@@ -27,12 +17,17 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
-    "Method": "Edit",
-    "RelativePath": "Basket",
+    "Method": "UpdateBasket",
+    "RelativePath": "Basket/{basketId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "basketId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
       {
         "Name": "basket",
         "Type": "IbulakStoreServer.Data.Entities.Basket",
@@ -43,30 +38,30 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
-    "Method": "Delete",
-    "RelativePath": "Basket",
+    "Method": "DeleteBasket",
+    "RelativePath": "Basket/{basketId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "basketId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
-    "Method": "Get",
-    "RelativePath": "Basket/{id}",
+    "Method": "GetBasketsByUserId",
+    "RelativePath": "Basket/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
       }
