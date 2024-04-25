@@ -7,55 +7,55 @@ namespace IbulakStoreServer.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class BasketController : ControllerBase
+    public class OrderController : ControllerBase
     {
-        private readonly BasketService _BasketService;
+        private readonly OrderService _OrderService;
 
-        public BasketController(BasketService basketService)
+        public OrderController(OrderService orderService)
         {
-            _BasketService = basketService;
+            _OrderService = orderService;
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var result = await _BasketService.GetAsync(id);
+            var result = await _OrderService.GetAsync(id);
             return Ok(result);
         }
         [HttpGet]
         public async Task<IActionResult> Gets()
         {
-            var result = await _BasketService.GetsAsync();
+            var result = await _OrderService.GetsAsync();
             return Ok(result);
         }
         [HttpGet("GetsByProduct")]
         public async Task<IActionResult> GetsByProduct(int productId)
         {
-            var result = await _BasketService.GetsByProductAsync(productId);
+            var result = await _OrderService.GetsByProductAsync(productId);
             return Ok(result);
         }
         [HttpGet("GetsByUser")]
         public async Task<IActionResult> GetsByUser(int userId)
         {
-            var result = await _BasketService.GetsByUserAsync(userId);
+            var result = await _OrderService.GetsByUserAsync(userId);
             return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Add(Basket basket)
+        public async Task<IActionResult> Add(Order order)
         {
-            await _BasketService.AddAsync(basket);
+            await _OrderService.AddAsync(order);
             return Ok();
         }
         [HttpPut]
-        public async Task<IActionResult> Edit([FromBody] Basket basket)
+        public async Task<IActionResult> Edit([FromBody] Order order)
         {
-            await _BasketService.EditAsync(basket);
+            await _OrderService.EditAsync(order);
             return Ok();
         }
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            await _BasketService.DeleteAsync(id);
+            await _OrderService.DeleteAsync(id);
             return Ok();
         }
     }

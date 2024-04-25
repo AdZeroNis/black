@@ -30,6 +30,11 @@ namespace IbulakStoreServer.Services
             List<Basket> baskets = await _context.Baskets.Where(basket => basket.ProductId == ProductId).ToListAsync();
             return basket;
         }
+        public async Task<List<Basket>> GetsByUserAsync(int userId)
+        {
+            List<Basket> baskets = await _context.Baskets.Where(basket => basket.userId == userId).ToListAsync();
+            return basket;
+        }
         public async Task AddAsync(Basket basket)
         {
             _context.Baskets.Add(basket);
@@ -43,6 +48,9 @@ namespace IbulakStoreServer.Services
                 throw new Exception("سبد خریدی  با این شناسه پیدا نشد.");
             }
             oldBasket.Count = basket.Count;
+            oldBasket.ProductId = basket.ProductId;
+            oldBasket.UserId = basket.UserId;
+
             _context.Baskets.Update(oldBasket);
             await _context.SaveChangesAsync();
         }
