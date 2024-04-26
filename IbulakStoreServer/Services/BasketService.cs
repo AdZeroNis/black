@@ -32,7 +32,7 @@ namespace IbulakStoreServer.Services
         }
         public async Task<List<Basket>> GetsByUserAsync(int userId)
         {
-            List<Basket> baskets = await _context.Baskets.Where(basket => basket.userId == userId).ToListAsync();
+            List<Basket> baskets = await _context.Baskets.Where(basket => basket.UserId == userId).ToListAsync();
             return basket;
         }
         public async Task AddAsync(Basket basket)

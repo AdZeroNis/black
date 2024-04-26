@@ -52,7 +52,7 @@ namespace IbulakStoreServer.Services
             oldOrder.ProductId = order.ProductId;
             oldOrder.UserId = order.UserId;
             
-            _context.Baskets.Update(oldOrder);
+            _context.Orders.Update(oldOrder);
             await _context.SaveChangesAsync();
         }
         public async Task DeleteAsync(int id)

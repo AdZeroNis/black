@@ -8,6 +8,6 @@
     "\\IbulakStoreServer\\Data\\Entities",
     "\\IbulakStoreServer\\Services"
   ],
-  "SelectedNode": "\\SecondBlazorWebApp.sln",
+  "SelectedNode": "\\IbulakStoreServer\\Services\\BasketService.cs",
   "PreviewInSolutionExplorer": false
 }
