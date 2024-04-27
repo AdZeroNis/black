@@ -20,4 +20,8 @@
     <Folder Include="Database\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\share\share.csproj" />
+  </ItemGroup>
+
 </Project>

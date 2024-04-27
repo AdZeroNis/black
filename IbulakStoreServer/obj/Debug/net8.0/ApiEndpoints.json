@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "basket",
-        "Type": "IbulakStoreServer.Data.Entities.Basket",
+        "Type": "IbulakStoreServer.Controllers.BasketAddRequestDto",
         "IsRequired": true
       }
     ],

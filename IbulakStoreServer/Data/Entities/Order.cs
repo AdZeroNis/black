@@ -4,8 +4,6 @@ namespace IbulakStoreServer.Data.Entities
 {
     public class Order
     {
-        internal int productId;
-        internal int userId;
 
         public int Id { get; set; }
         [ForeignKey("User")]

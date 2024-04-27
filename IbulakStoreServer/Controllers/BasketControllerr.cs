@@ -10,6 +10,7 @@ namespace IbulakStoreServer.Controllers
     public class BasketController : ControllerBase
     {
         private readonly BasketService _BasketService;
+        private readonly ProductService _ProductService;
 
         public BasketController(BasketService basketService)
         {
@@ -40,8 +41,11 @@ namespace IbulakStoreServer.Controllers
             var result = await _BasketService.GetsByUserAsync(userId);
             return Ok(result);
         }
+
+
+
         [HttpPost]
-        public async Task<IActionResult> Add(Basket basket)
+        public async Task<IActionResult> Add(BasketAddRequestDto basket)
         {
             await _BasketService.AddAsync(basket);
             return Ok();

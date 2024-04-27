@@ -1,13 +1,17 @@
-﻿using IbulakStoreServer.Data.Domain;
+﻿using IbulakStoreServer.Controllers;
+using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
 
 namespace IbulakStoreServer.Services
 {
     public class BasketService
     {
         private readonly StoreDbContext _context;
+#pragma warning disable CS0649 // Field 'BasketService.basket' is never assigned to, and will always have its default value null
         private List<Basket> basket;
+#pragma warning restore CS0649 // Field 'BasketService.basket' is never assigned to, and will always have its default value null
 
         public int ProductId { get; private set; }
 
@@ -35,11 +39,18 @@ namespace IbulakStoreServer.Services
             List<Basket> baskets = await _context.Baskets.Where(basket => basket.UserId == userId).ToListAsync();
             return basket;
         }
-        public async Task AddAsync(Basket basket)
+        public async Task AddAsync(BasketAddRequestDto model)
         {
-            _context.Baskets.Add(basket);
+            Basket basket = new Basket
+            {
+                UserId = model.UserId,
+                Count = model.Count,
+                ProductId = model.ProductId,
+            };
+            _context.Baskets.Update(basket);
             await _context.SaveChangesAsync();
         }
+
         public async Task EditAsync(Basket basket)
         {
             Basket? oldBasket = await _context.Baskets.FindAsync(basket.Id);

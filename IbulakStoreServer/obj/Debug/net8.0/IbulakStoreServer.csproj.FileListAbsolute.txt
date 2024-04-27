@@ -253,3 +253,5 @@ C:\Users\Asus\source\repos\black\IbulakStoreServer\obj\Debug\net8.0\refint\Ibula
 C:\Users\Asus\source\repos\black\IbulakStoreServer\obj\Debug\net8.0\IbulakStoreServer.pdb
 C:\Users\Asus\source\repos\black\IbulakStoreServer\obj\Debug\net8.0\IbulakStoreServer.genruntimeconfig.cache
 C:\Users\Asus\source\repos\black\IbulakStoreServer\obj\Debug\net8.0\ref\IbulakStoreServer.dll
+C:\Users\Asus\source\repos\black\IbulakStoreServer\bin\Debug\net8.0\share.dll
+C:\Users\Asus\source\repos\black\IbulakStoreServer\bin\Debug\net8.0\share.pdb

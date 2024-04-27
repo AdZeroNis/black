@@ -8,6 +8,6 @@
     "\\IbulakStoreServer\\Data\\Entities",
     "\\IbulakStoreServer\\Services"
   ],
-  "SelectedNode": "\\IbulakStoreServer\\Services\\BasketService.cs",
+  "SelectedNode": "\\IbulakStoreServer\\Data\\Entities\\Basket.cs",
   "PreviewInSolutionExplorer": false
 }
