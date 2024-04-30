@@ -58,8 +58,7 @@
               "RelativeToolTip": "IbulakStoreServer\\Services\\ProductService.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T06:51:45.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T06:51:45.52Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "IbulakStoreServer\\Controllers\\BasketAddRequestDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T06:04:00.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T06:04:00.998Z"
             },
             {
               "$type": "Document",
@@ -82,7 +80,7 @@
               "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\BasketService.cs",
               "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\BasketService.cs",
               "RelativeToolTip": "IbulakStoreServer\\Services\\BasketService.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAuwC0AAAAmAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAqwD4AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-27T05:37:40.871Z",
               "EditorCaption": ""
@@ -90,15 +88,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IbulakStoreServer",
+              "Title": "IbulakStoreServer.csproj",
               "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
               "RelativeDocumentMoniker": "IbulakStoreServer\\IbulakStoreServer.csproj",
               "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
               "RelativeToolTip": "IbulakStoreServer\\IbulakStoreServer.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-27T05:34:52.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T05:34:52.939Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "share\\Models\\Basket\\BasketAddRequestDto.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAqwAwAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T05:30:31.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T05:30:31.384Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "IbulakStoreServer\\Controllers\\BasketControllerr.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T05:14:08.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T05:14:08.049Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "IbulakStoreServer\\Data\\Entities\\Order.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T05:13:37.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T05:13:37.529Z"
             },
             {
               "$type": "Document",
@@ -149,8 +143,7 @@
               "RelativeToolTip": "IbulakStoreServer\\Data\\Entities\\Basket.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAiwA0AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T05:07:59.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T05:07:59.988Z"
             },
             {
               "$type": "Document",
@@ -162,8 +155,7 @@
               "RelativeToolTip": "IbulakStoreServer\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T05:07:52.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T05:07:52.425Z"
             }
           ]
         }
