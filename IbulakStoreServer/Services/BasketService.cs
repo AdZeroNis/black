@@ -9,9 +9,8 @@ namespace IbulakStoreServer.Services
     public class BasketService
     {
         private readonly StoreDbContext _context;
-#pragma warning disable CS0649 // Field 'BasketService.basket' is never assigned to, and will always have its default value null
+
         private List<Basket> basket;
-#pragma warning restore CS0649 // Field 'BasketService.basket' is never assigned to, and will always have its default value null
 
         public int ProductId { get; private set; }
 
