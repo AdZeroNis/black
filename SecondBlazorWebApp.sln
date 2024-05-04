@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecondBlazorWebApp", "Secon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbulakStoreServer", "IbulakStoreServer\IbulakStoreServer.csproj", "{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "share", "share\share.csproj", "{F9C1C575-BAED-44DE-A41D-85FAB326248F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{C86293F6-5522-4856-9C45-5F6D0BE10AA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9C1C575-BAED-44DE-A41D-85FAB326248F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9C1C575-BAED-44DE-A41D-85FAB326248F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9C1C575-BAED-44DE-A41D-85FAB326248F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9C1C575-BAED-44DE-A41D-85FAB326248F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C86293F6-5522-4856-9C45-5F6D0BE10AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86293F6-5522-4856-9C45-5F6D0BE10AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86293F6-5522-4856-9C45-5F6D0BE10AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86293F6-5522-4856-9C45-5F6D0BE10AA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

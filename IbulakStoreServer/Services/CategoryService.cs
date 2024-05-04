@@ -1,5 +1,4 @@
-﻿using IbulakStoreServer.Controllers;
-using IbulakStoreServer.Data.Domain;
+﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,15 +21,9 @@ namespace IbulakStoreServer.Services
             List<Category> categories = await _context.Categories.ToListAsync();
             return categories;
         }
-        public async Task AddAsync(CategoryAddRequestDto model)
+        public async Task AddAsync(Category category)
         {
-            Category category = new Category
-            {
-                Name = model.Name,
-                ImageFileName = model.ImageFileName,
-                
-            };
-            _context.Categories.Update(category);
+            _context.Categories.Add(category);
             await _context.SaveChangesAsync();
         }
         public async Task EditAsync(Category category)
@@ -54,11 +47,6 @@ namespace IbulakStoreServer.Services
             }
             _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
-        }
-
-        internal async Task AddAsync(Category category)
-        {
-            throw new NotImplementedException();
         }
     }
 }

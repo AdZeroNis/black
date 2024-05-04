@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "basket",
-        "Type": "IbulakStoreServer.Controllers.BasketAddRequestDto",
+        "Type": "Shared.Models.Bascket.BascketAddRequestDto",
         "IsRequired": true
       }
     ],
@@ -125,7 +125,7 @@
     "Parameters": [
       {
         "Name": "category",
-        "Type": "IbulakStoreServer.Controllers.CategoryAddRequestDto",
+        "Type": "IbulakStoreServer.Data.Entities.Category",
         "IsRequired": true
       }
     ],
@@ -233,6 +233,22 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.OrderController",
+    "Method": "AddRange",
+    "RelativePath": "Order/AddRange",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orders",
+        "Type": "System.Collections.Generic.List\u00601[[Shared.Models.Order.OrderAddRequestDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -468,5 +484,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.FileController",
+    "Method": "Post",
+    "RelativePath": "api/File",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

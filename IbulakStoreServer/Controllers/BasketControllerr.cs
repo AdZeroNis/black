@@ -2,6 +2,7 @@
 using IbulakStoreServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Models.Bascket;
 
 namespace IbulakStoreServer.Controllers
 {
@@ -10,11 +11,12 @@ namespace IbulakStoreServer.Controllers
     public class BasketController : ControllerBase
     {
         private readonly BasketService _basketService;
-        private readonly ProductService _ProductService;
+        private readonly ProductService _productService;
 
-        public BasketController(BasketService basketService)
+        public BasketController(BasketService basketService, ProductService productService)
         {
             _basketService = basketService;
+            _productService = productService;
         }
 
         [HttpGet("{id}")]
@@ -41,12 +43,23 @@ namespace IbulakStoreServer.Controllers
             var result = await _basketService.GetsByUserAsync(userId);
             return Ok(result);
         }
-
-
-
+        /// <summary>
+        /// اضافه کردن یک محصول به سبد خرید
+        /// </summary>
+        /// <param name="basket">اطلاعات محصول</param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Add(BasketAddRequestDto basket)
+        public async Task<IActionResult> Add(BascketAddRequestDto basket)
         {
+            var product = await _productService.FindByIdAsync(basket.ProductId);
+            if (product==null)
+            {
+                return NotFound();
+            }
+            if (product.Count<basket.Count)
+            {
+                return BadRequest("این تعداد کالا موجود نمی باشد");
+            }
             await _basketService.AddAsync(basket);
             return Ok();
         }

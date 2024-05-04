@@ -3,11 +3,11 @@
     "",
     "\\IbulakStoreServer",
     "\\IbulakStoreServer\\Controllers",
-    "\\IbulakStoreServer\\Data",
-    "\\IbulakStoreServer\\Data\\Domain",
-    "\\IbulakStoreServer\\Data\\Entities",
-    "\\IbulakStoreServer\\Services"
+    "\\SecondBlazorWebApp",
+    "\\SecondBlazorWebApp\\Layout",
+    "\\SecondBlazorWebApp\\Pages",
+    "\\SecondBlazorWebApp\\Properties"
   ],
-  "SelectedNode": "\\IbulakStoreServer\\Data\\Entities\\Basket.cs",
+  "SelectedNode": "\\SecondBlazorWebApp\\Layout\\MainLayout.razor",
   "PreviewInSolutionExplorer": false
 }

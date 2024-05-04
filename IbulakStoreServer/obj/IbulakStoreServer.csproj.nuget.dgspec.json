@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Asus\\source\\repos\\black\\share\\share.csproj": {
-                "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\share\\share.csproj"
+              "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\Asus\\source\\repos\\black\\share\\share.csproj": {
+    "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\share\\share.csproj",
-        "projectName": "share",
-        "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\share\\share.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj",
+        "projectName": "Shared",
+        "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\share\\obj\\",
+        "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -127,6 +127,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

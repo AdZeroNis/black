@@ -21,6 +21,11 @@ namespace IbulakStoreServer.Services
             Product? product =await _context.Products.FindAsync(id);
             return product;
         }
+        public async Task<Product?> FindByIdAsync(int id)
+        {
+            Product? product = await _context.Products.FindAsync(id);
+            return product;
+        }
         public async Task<List<Product>> GetsAsync()
         {
             List<Product> products = await _context.Products.ToListAsync();

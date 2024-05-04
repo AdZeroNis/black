@@ -48,6 +48,7 @@ using (var scope = app.Services.CreateScope())
     context.Database.Migrate();
     // DbInitializer.Initialize(context);
 }
+app.UseStaticFiles();
 app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
 

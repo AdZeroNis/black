@@ -2,6 +2,7 @@
 using IbulakStoreServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Models.Order;
 
 namespace IbulakStoreServer.Controllers
 {
@@ -44,6 +45,12 @@ namespace IbulakStoreServer.Controllers
         public async Task<IActionResult> Add(Order order)
         {
             await _orderService.AddAsync(order);
+            return Ok();
+        }
+        [HttpPost("AddRange")]
+        public async Task<IActionResult> AddRange(List<OrderAddRequestDto> orders)
+        {
+            await _orderService.AddRangeAsync(orders);
             return Ok();
         }
         [HttpPut]

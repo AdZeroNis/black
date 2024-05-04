@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace share.Models.Basket
+namespace Shared.Models.Order
 {
-    internal class BasketAddRequestDto
+    public class OrderAddRequestDto
     {
         public int UserId { get; set; }
+        public int Price { get; set; }
         public int Count { get; set; }
         public int ProductId { get; set; }
     }

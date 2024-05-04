@@ -1,15 +1,13 @@
-﻿using IbulakStoreServer.Controllers;
-using IbulakStoreServer.Data.Domain;
+﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
+using Shared.Models.Bascket;
 
 namespace IbulakStoreServer.Services
 {
     public class BasketService
     {
         private readonly StoreDbContext _context;
-
         private List<Basket> basket;
 
         public int ProductId { get; private set; }
@@ -38,7 +36,7 @@ namespace IbulakStoreServer.Services
             List<Basket> baskets = await _context.Baskets.Where(basket => basket.UserId == userId).ToListAsync();
             return basket;
         }
-        public async Task AddAsync(BasketAddRequestDto model)
+        public async Task AddAsync(BascketAddRequestDto model)
         {
             Basket basket = new Basket
             {
@@ -46,10 +44,9 @@ namespace IbulakStoreServer.Services
                 Count = model.Count,
                 ProductId = model.ProductId,
             };
-            _context.Baskets.Update(basket);
+            _context.Baskets.Add(basket);
             await _context.SaveChangesAsync();
         }
-
         public async Task EditAsync(Basket basket)
         {
             Basket? oldBasket = await _context.Baskets.FindAsync(basket.Id);
