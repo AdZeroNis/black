@@ -41,19 +41,22 @@ namespace IbulakStoreServer.Services
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
         }
-        public async Task AddRangeAsync(List<OrderAddRequestDto> models)
+        public async Task AddRangeAsync(List<OrderAddRequestDto> orders)
         {
-            var orders = models.Select(orderDto=>new Order
+            var order = orders.Select(orderDto => new Order
             {
+
                 Count = orderDto.Count,
-                Price=orderDto.Price,
-                ProductId=orderDto.ProductId,
+                Price = orderDto.Price,
+                ProductId = orderDto.ProductId,
                 UserId = orderDto.UserId,
-                CreatedAt=DateTime.Now
-            });
-            _context.Orders.AddRange(orders);
+                CreatedAt = DateTime.Now 
+            }).ToList();
+
+            _context.Orders.AddRange(order);
             await _context.SaveChangesAsync();
         }
+
         public async Task EditAsync(Order order)
         {
             Order? oldOrder = await _context.Orders.FindAsync(order.Id);

@@ -1,7 +1,9 @@
-﻿using IbulakStoreServer.Data.Entities;
+﻿using IbulakStoreServer.Data.Domain;
+using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Shared.Models.Order;
 
 namespace IbulakStoreServer.Controllers
@@ -11,10 +13,13 @@ namespace IbulakStoreServer.Controllers
     public class OrderController : ControllerBase
     {
         private readonly OrderService _orderService;
+        private readonly StoreDbContext _context;
 
-        public OrderController(OrderService orderService)
+
+        public OrderController(OrderService orderService, StoreDbContext context)
         {
             _orderService = orderService;
+            _context = context;
         }
 
         [HttpGet("{id}")]
@@ -41,18 +46,48 @@ namespace IbulakStoreServer.Controllers
             var result = await _orderService.GetsByUserAsync(userId);
             return Ok(result);
         }
-       // [HttpPost]
-       // public async Task<IActionResult> Add(Order order)
-       // {
+        // [HttpPost]
+        // public async Task<IActionResult> Add(Order order)
+        // {
         //    await _orderService.AddAsync(order);
         //    return Ok();
-       // }
+        // }
         [HttpPost("AddRange")]
         public async Task<IActionResult> AddRange(List<OrderAddRequestDto> orders)
         {
-            await _orderService.AddRangeAsync(orders);
+            var orderEntities = new List<Order>();
+            foreach (var orderDto in orders)
+            {
+                Product? product = await _context.Products.FindAsync(orderDto.ProductId);
+                if (product is null)
+                {
+                    return NotFound($"محصولی با شناسه {orderDto.ProductId} پیدا نشد.");
+                }
+
+                if (orderDto.Count > product.Count)
+                {
+                    return BadRequest($"تعداد محصول درخواستی بیشتر از موجودی است. تعداد موجود: {product.Count}");
+                }
+                product.Count -= orderDto.Count;
+                _context.Products.Update(product);
+
+                var order = new Order
+                {
+                    Count = orderDto.Count,
+                    Price = orderDto.Price,
+                    ProductId = orderDto.ProductId,
+                    UserId = orderDto.UserId,
+                    CreatedAt = DateTime.Now
+                };
+
+                orderEntities.Add(order);
+            }
+
+            _context.Orders.AddRange(orderEntities);
+            await _context.SaveChangesAsync();
             return Ok();
         }
+
         [HttpPut]
         public async Task<IActionResult> Edit([FromBody] Order order)
         {
