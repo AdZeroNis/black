@@ -47,10 +47,7 @@ namespace IbulakStoreServer.Controllers
             {
                 return NotFound();
             }
-            else
-            {
-                return BadRequest("این محصول ثبت شد");
-            }
+
             await _productService.AddAsync(product);
             return Ok();
         }
