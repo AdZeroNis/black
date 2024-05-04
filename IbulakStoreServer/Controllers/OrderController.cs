@@ -41,12 +41,12 @@ namespace IbulakStoreServer.Controllers
             var result = await _orderService.GetsByUserAsync(userId);
             return Ok(result);
         }
-        [HttpPost]
-        public async Task<IActionResult> Add(Order order)
-        {
-            await _orderService.AddAsync(order);
-            return Ok();
-        }
+       // [HttpPost]
+       // public async Task<IActionResult> Add(Order order)
+       // {
+        //    await _orderService.AddAsync(order);
+        //    return Ok();
+       // }
         [HttpPost("AddRange")]
         public async Task<IActionResult> AddRange(List<OrderAddRequestDto> orders)
         {

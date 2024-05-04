@@ -3,6 +3,7 @@ using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Models.User;
 
 namespace IbulakStoreServer.Controllers
 {
@@ -17,10 +18,15 @@ namespace IbulakStoreServer.Controllers
         }
 
 
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var result = await _userService.GetAsync(id);
+            if (result == null)
+            {
+                return NotFound("User not available");
+            }
             return Ok(result);
         }
         [HttpGet]
@@ -31,8 +37,9 @@ namespace IbulakStoreServer.Controllers
         }
       
         [HttpPost]
-        public async Task<IActionResult> Add(User user)
+        public async Task<IActionResult> Add(UserAddRequestDto user)
         {
+
             await _userService.AddAsync(user);
             return Ok();
         }

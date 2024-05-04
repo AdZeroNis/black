@@ -191,22 +191,6 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.OrderController",
-    "Method": "Add",
-    "RelativePath": "Order",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "order",
-        "Type": "IbulakStoreServer.Data.Entities.Order",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "IbulakStoreServer.Controllers.OrderController",
     "Method": "Edit",
     "RelativePath": "Order",
     "HttpMethod": "PUT",
@@ -411,7 +395,7 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "IbulakStoreServer.Data.Entities.User",
+        "Type": "Shared.Models.User.UserAddRequestDto",
         "IsRequired": true
       }
     ],

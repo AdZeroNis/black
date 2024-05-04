@@ -38,7 +38,7 @@ namespace IbulakStoreServer.Controllers
             return Ok(result);
         }
 
-       >
+       
         [HttpPost]
         public async Task<IActionResult> Add(ProductAddRequestDto product)
         {
