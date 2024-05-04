@@ -125,7 +125,7 @@
     "Parameters": [
       {
         "Name": "category",
-        "Type": "IbulakStoreServer.Data.Entities.Category",
+        "Type": "Shared.Models.Category.CategoryAddRequestDto",
         "IsRequired": true
       }
     ],

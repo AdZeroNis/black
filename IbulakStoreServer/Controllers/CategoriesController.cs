@@ -2,6 +2,8 @@
 using IbulakStoreServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Models.Category;
+using Shared.Models.User;
 
 namespace IbulakStoreServer.Controllers
 {
@@ -29,8 +31,9 @@ namespace IbulakStoreServer.Controllers
             return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Add(Category category)
+        public async Task<IActionResult> Add(CategoryAddRequestDto category)
         {
+
             await _categoryService.AddAsync(category);
             return Ok();
         }

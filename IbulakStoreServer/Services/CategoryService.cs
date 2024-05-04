@@ -1,6 +1,7 @@
 ﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using Shared.Models.Category;
 
 namespace IbulakStoreServer.Services
 {
@@ -21,8 +22,17 @@ namespace IbulakStoreServer.Services
             List<Category> categories = await _context.Categories.ToListAsync();
             return categories;
         }
-        public async Task AddAsync(Category category)
+        public async Task AddAsync(CategoryAddRequestDto model)
         {
+            Category category = new Category
+            {
+                
+                Name = model.Name,
+                
+                ImageFileName = model.ImageFileName
+              
+
+            };
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
         }

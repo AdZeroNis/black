@@ -25,7 +25,7 @@ namespace IbulakStoreServer.Controllers
             var result = await _userService.GetAsync(id);
             if (result == null)
             {
-                return NotFound("User not available");
+                return NotFound("کاربر در دسترس نیست");
             }
             return Ok(result);
         }
