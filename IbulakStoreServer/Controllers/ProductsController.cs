@@ -3,6 +3,7 @@ using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Models.Product;
 
 namespace IbulakStoreServer.Controllers
 {
@@ -11,6 +12,7 @@ namespace IbulakStoreServer.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly ProductService _productService;
+        private readonly CategoryService _categoryService;
         public ProductsController(ProductService productService)
         {
             _productService = productService;
@@ -36,9 +38,19 @@ namespace IbulakStoreServer.Controllers
             return Ok(result);
         }
 
+       >
         [HttpPost]
-        public async Task<IActionResult> Add(Product product)
+        public async Task<IActionResult> Add(ProductAddRequestDto product)
         {
+            var category = await _productService.FindByIdAsync(product.CategoryId);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return BadRequest("این محصول ثبت شد");
+            }
             await _productService.AddAsync(product);
             return Ok();
         }

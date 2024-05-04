@@ -1,6 +1,8 @@
 ﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using Shared.Models.Product;
 
 namespace IbulakStoreServer.Services
 {
@@ -36,14 +38,19 @@ namespace IbulakStoreServer.Services
             List<Product> products = await _context.Products.Where(product=> product.CategoryId== categoryId).ToListAsync();
             return products;
         }
-        public async Task AddAsync(Product product)
+        public async Task AddAsync(ProductAddRequestDto model)
         {
-            Category? category = await _context.Categories.FindAsync(product.CategoryId);
-            if (category is null)
+            Product product = new Product
             {
-                throw new Exception("دسته بندی محصولی با این شناسه پیدا نشد.");
-            }
-            product.Category = category;
+                CategoryId = model.CategoryId,
+                Count = model.Count,
+                Name = model.Name,
+                Description=model.Description,
+                ImageFileName=model.ImageFileName,
+                CreatedAt=model.CreatedAt,
+                Price=model.Price
+
+            };
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
         }

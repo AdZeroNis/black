@@ -321,7 +321,7 @@
     "Parameters": [
       {
         "Name": "product",
-        "Type": "IbulakStoreServer.Data.Entities.Product",
+        "Type": "Shared.Models.Product.ProductAddRequestDto",
         "IsRequired": true
       }
     ],
