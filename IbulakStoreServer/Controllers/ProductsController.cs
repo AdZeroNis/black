@@ -4,6 +4,8 @@ using IbulakStoreServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Product;
+using Shared.Models.Products;
+using Shared.Models.Products;
 
 namespace IbulakStoreServer.Controllers
 {
@@ -62,6 +64,13 @@ namespace IbulakStoreServer.Controllers
         {
             await _productService.DeleteAsync(id);
             return Ok();
+        }
+
+        [HttpGet("Search")]
+        public async Task<IActionResult> Search([FromQuery] SearchRequestDto model)
+        {
+            var result = await _productService.SearchAsync(model);
+            return Ok(result);
         }
     }
 }
