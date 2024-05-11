@@ -3,6 +3,9 @@ using IbulakStoreServer.Data.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Shared.Models.Product;
+using Shared.Models.Products;
+using Shared.Models.Products;
+using System.Linq;
 
 namespace IbulakStoreServer.Services
 {
@@ -80,5 +83,35 @@ namespace IbulakStoreServer.Services
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
         }
+        public async Task<List<SearchResponseDto>> SearchAsync(SearchRequestDto model)
+        {
+            var products = await _context.Products
+                                .Where(a =>
+                                (model.Count == null || a.Count <= model.Count)
+                               && (model.FromDate == null || a.CreatedAt >= model.FromDate)
+                               && (model.ToDate == null || a.CreatedAt <= model.ToDate)
+                               && (model.CategoryName == null || a.Category.Name.Contains(model.CategoryName))
+                               && (model.ProductName == null || a.Name.Contains(model.ProductName))
+                                )
+                                .Skip(model.PageNo * model.PageSize)
+                                .Take(model.PageSize)
+                                .Select(a => new SearchResponseDto
+                                {
+                                    ProductId = a.Id,
+                                    ProductName = a.Name,
+                                    CategoryId = a.CategoryId,
+                                    Count = a.Count,
+                                    Price = a.Price,
+                                    CreatedAt = a.CreatedAt,
+                                    Description = a.Description,
+                                    CategoryName = a.Category.Name,
+                                    CategoryImageFileName = a.Category.ImageFileName,
+                                    ProductImageFileName = a.ImageFileName
+                                }
+                )
+                                .ToListAsync();
+            return products;
+        }
+
     }
 }
