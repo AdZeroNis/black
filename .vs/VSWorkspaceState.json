@@ -2,12 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\IbulakStoreServer",
-    "\\IbulakStoreServer\\Controllers",
+    "\\IbulakStoreServer\\Services",
     "\\SecondBlazorWebApp",
     "\\SecondBlazorWebApp\\Layout",
     "\\SecondBlazorWebApp\\Pages",
-    "\\SecondBlazorWebApp\\Properties"
+    "\\SecondBlazorWebApp\\Properties",
+    "\\Shared",
+    "\\Shared\\Models",
+    "\\Shared\\Models\\Products"
   ],
-  "SelectedNode": "\\SecondBlazorWebApp\\Layout\\MainLayout.razor",
+  "SelectedNode": "\\Shared\\Models\\Products\\SearchRequestDto.cs",
   "PreviewInSolutionExplorer": false
 }
