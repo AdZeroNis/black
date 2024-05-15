@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Shared.Models.Order;
+using Shared.Models.Orders;
+
 
 namespace IbulakStoreServer.Controllers
 {
@@ -99,6 +101,12 @@ namespace IbulakStoreServer.Controllers
         {
             await _orderService.DeleteAsync(id);
             return Ok();
+        }
+        [HttpGet("Search")]
+        public async Task<IActionResult> Search([FromQuery] SearchRequestDto model)
+        {
+            var result = await _orderService.SearchAsync(model);
+            return Ok(result);
         }
     }
 }

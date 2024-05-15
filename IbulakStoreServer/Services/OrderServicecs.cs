@@ -2,6 +2,7 @@
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Shared.Models.Order;
+using Shared.Models.Orders;
 
 namespace IbulakStoreServer.Services
 {
@@ -50,7 +51,7 @@ namespace IbulakStoreServer.Services
                 Price = orderDto.Price,
                 ProductId = orderDto.ProductId,
                 UserId = orderDto.UserId,
-                CreatedAt = DateTime.Now 
+                CreatedAt = DateTime.Now
             }).ToList();
 
             _context.Orders.AddRange(order);
@@ -68,7 +69,7 @@ namespace IbulakStoreServer.Services
             oldOrder.Count = order.Price;
             oldOrder.ProductId = order.ProductId;
             oldOrder.UserId = order.UserId;
-            
+
             _context.Orders.Update(oldOrder);
             await _context.SaveChangesAsync();
         }
@@ -82,5 +83,34 @@ namespace IbulakStoreServer.Services
             _context.Orders.Remove(order);
             await _context.SaveChangesAsync();
         }
+        public async Task<List<SearchResponseDto>> SearchAsync(SearchRequestDto model)
+        {
+            var orders = await _context.Orders
+               .Where(o =>
+                    (model.Count == null || o.Count <= model.Count) &&
+                    (model.FromDate == null || o.CreatedAt >= model.FromDate) &&
+                    (model.ToDate == null || o.CreatedAt <= model.ToDate) &&
+                    (!string.IsNullOrEmpty(model.UserName) ? o.User.UserName == model.UserName : true) &&
+                    (!string.IsNullOrEmpty(model.ProductName) ? o.Product.Name == model.ProductName : true)
+                )
+               .Skip((model.PageNo - 1) * model.PageSize)
+               .Take(model.PageSize)
+               .Select(o => new SearchResponseDto
+               {
+                   ProductId = o.ProductId,
+                   ProductName = o.Product.Name,
+                   Count = o.Count,
+                   Price = o.Price,
+                   CreatedAt = o.CreatedAt,
+                   ProductImageFileName = "YourLogicToGetImageFileName",
+                   UserId = o.UserId,
+                   UserName = o.User.UserName,
+                   UserLastName = o.User.LastName
+               })
+               .ToListAsync();
+
+            return orders;
+        }
     }
 }
+
