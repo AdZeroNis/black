@@ -18,6 +18,6 @@ namespace Shared.Models.Orders
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string UserLastName { get; set; }
-        public string SortBy { get; set; }
+
     }
 }
