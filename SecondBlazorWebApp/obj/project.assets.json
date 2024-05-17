@@ -2062,11 +2062,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
       "projectName": "SecondBlazorWebApp",
-      "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
+      "projectPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\SecondBlazorWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",

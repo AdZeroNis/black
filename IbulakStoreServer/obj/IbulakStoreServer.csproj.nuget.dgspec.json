@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj": {}
+    "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\IbulakStoreServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj": {
+    "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\IbulakStoreServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\IbulakStoreServer.csproj",
         "projectName": "IbulakStoreServer",
-        "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
+        "projectPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\IbulakStoreServer.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\obj\\",
+        "outputPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj"
+              "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\Shared\\Shared.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj": {
+    "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj",
+        "projectPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",

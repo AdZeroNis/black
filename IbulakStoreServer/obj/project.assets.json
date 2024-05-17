@@ -3229,11 +3229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\IbulakStoreServer.csproj",
       "projectName": "IbulakStoreServer",
-      "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
+      "projectPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\IbulakStoreServer.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3250,8 +3250,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj"
+            "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\Shared\\Shared.csproj"
             }
           }
         }
