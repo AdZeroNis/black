@@ -86,29 +86,31 @@ namespace IbulakStoreServer.Services
         public async Task<List<SearchResponseDto>> SearchAsync(SearchRequestDto model)
         {
             var orders = await _context.Orders
-               .Where(o =>
-                    (model.Count == null || o.Count <= model.Count) &&
-                    (model.FromDate == null || o.CreatedAt >= model.FromDate) &&
-                    (model.ToDate == null || o.CreatedAt <= model.ToDate) &&
-                    (!string.IsNullOrEmpty(model.UserName) ? o.User.UserName == model.UserName : true) &&
-                    (!string.IsNullOrEmpty(model.ProductName) ? o.Product.Name == model.ProductName : true)
-                )
-               .Skip((model.PageNo - 1) * model.PageSize)
-               .Take(model.PageSize)
-               .Select(o => new SearchResponseDto
-               {
-                   ProductId = o.ProductId,
-                   ProductName = o.Product.Name,
-                   Count = o.Count,
-                   Price = o.Price,
-                   CreatedAt = o.CreatedAt,
-                   ProductImageFileName = "YourLogicToGetImageFileName",
-                   UserId = o.UserId,
-                   UserName = o.User.UserName,
-                   UserLastName = o.User.LastName
-               })
-               .ToListAsync();
+                                .Where(a =>
+                                (model.Count == null || a.Count <= model.Count)
+                               && (model.FromDate == null || a.CreatedAt >= model.FromDate)
+                               && (model.ToDate == null || a.CreatedAt <= model.ToDate)
+                               && (model.UserName == null || a.User.Name.Contains(model.UserName))
+                               && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
+                               )
 
+                                .Skip(model.PageNo * model.PageSize)
+                                .Take(model.PageSize)
+                                .Select(a => new SearchResponseDto
+                                {
+                                    ProductId = a.Id,
+                                    ProductName = a.Product.Name,
+                                    UserId = a.UserId,
+                                    Count = a.Count,
+                                    Price = a.Price,
+                                    CreatedAt = a.CreatedAt,
+                                    Description = a.Product.Description,
+                                    UserName = a.User.Name,
+                                    UserLastName = a.User.LastName,
+                                    ProductImageFileName = a.Product.ImageFileName
+                                }
+                )
+                                .ToListAsync();
             return orders;
         }
     }
