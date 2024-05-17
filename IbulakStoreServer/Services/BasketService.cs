@@ -77,8 +77,6 @@ namespace IbulakStoreServer.Services
             var orders = await _context.Orders
                                 .Where(a =>
                                 (model.Count == null || a.Count <= model.Count)
-                               && (model.FromDate == null || a.CreatedAt >= model.FromDate)
-                               && (model.ToDate == null || a.CreatedAt <= model.ToDate)
                                && (model.UserName == null || a.User.Name.Contains(model.UserName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
                                )
