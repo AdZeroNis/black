@@ -15,6 +15,6 @@ namespace Shared.Models.Orders
         public DateTime? ToDate { get; set; }
         public string? UserName { get; set; }
         public string? ProductName { get; set; }
-      
+        public char UserLastName { get; set; }
     }
 }

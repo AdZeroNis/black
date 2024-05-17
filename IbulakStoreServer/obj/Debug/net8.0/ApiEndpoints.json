@@ -357,6 +357,11 @@
         "Name": "ProductName",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "UserLastName",
+        "Type": "System.Char",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
