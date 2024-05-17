@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IbulakStoreServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7591f448c220756f7a8699c82fbc0636ab8857c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e19a7e5e97eed4e4da35c34935f6b39f1c677d0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("IbulakStoreServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IbulakStoreServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

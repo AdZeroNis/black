@@ -85,35 +85,48 @@ namespace IbulakStoreServer.Services
         }
         public async Task<List<SearchResponseDto>> SearchAsync(SearchRequestDto model)
         {
-            var products = await _context.Products
-                                .Where(a =>
-                                (model.Count == null || a.Count <= model.Count)
-                               && (model.FromDate == null || a.CreatedAt >= model.FromDate)
-                               && (model.ToDate == null || a.CreatedAt <= model.ToDate)
-                               && (model.CategoryName == null || a.Category.Name.Contains(model.CategoryName))
-                                &&(model.MinPrice == null || a.Price >= model.MinPrice)
-                                            && (model.MaxPrice == null || a.Price <= model.MaxPrice)
-                                            )
+            var products = _context.Products.AsQueryable();
 
-                                .Skip(model.PageNo * model.PageSize)
-                                .Take(model.PageSize)
-                                .Select(a => new SearchResponseDto
-                                {
-                                    ProductId = a.Id,
-                                    ProductName = a.Name,
-                                    CategoryId = a.CategoryId,
-                                    Count = a.Count,
-                                    Price = a.Price,
-                                    CreatedAt = a.CreatedAt,
-                                    Description = a.Description,
-                                    CategoryName = a.Category.Name,
-                                    CategoryImageFileName = a.Category.ImageFileName,
-                                    ProductImageFileName = a.ImageFileName
-                                }
-                )
-                                .ToListAsync();
-            return products;
+            // Apply filters
+            if (model.Count != null)
+                products = products.Where(a => a.Count <= model.Count);
+            if (model.FromDate != null)
+                products = products.Where(a => a.CreatedAt >= model.FromDate);
+            if (model.ToDate != null)
+                products = products.Where(a => a.CreatedAt <= model.ToDate);
+            if (model.CategoryName != null)
+                products = products.Where(a => a.Category.Name.Contains(model.CategoryName));
+            if (model.MinPrice != null)
+                products = products.Where(a => a.Price >= model.MinPrice);
+            if (model.MaxPrice != null)
+                products = products.Where(a => a.Price <= model.MaxPrice);
+
+            if (model.SortBy == "PriceAsc")
+                products = products.OrderBy(a => a.Price);
+            else if (model.SortBy == "PriceDesc")
+                products = products.OrderByDescending(a => a.Price);
+
+         
+            products = products.Skip(model.PageNo * model.PageSize).Take(model.PageSize);
+
+        
+            var searchResults = await products
+                .Select(a => new SearchResponseDto
+                {
+                    ProductId = a.Id,
+                    ProductName = a.Name,
+                    CategoryId = a.CategoryId,
+                    Count = a.Count,
+                    Price = a.Price,
+                    CreatedAt = a.CreatedAt,
+                    Description = a.Description,
+                    CategoryName = a.Category.Name,
+                    CategoryImageFileName = a.Category.ImageFileName,
+                    ProductImageFileName = a.ImageFileName
+                })
+                .ToListAsync();
+
+            return searchResults;
         }
-
     }
 }
