@@ -74,30 +74,43 @@ namespace IbulakStoreServer.Services
         }
         public async Task<List<SearchResponseDto>> SearchAsync(SearchRequestDto model)
         {
-            var orders = await _context.Orders
-                                .Where(a =>
-                                (model.Count == null || a.Count <= model.Count)
+            IQueryable<Basket> baskets = _context.Baskets
+               .Where(a =>
+            (model.Count == null || a.Count <= model.Count)
                                && (model.UserName == null || a.User.Name.Contains(model.UserName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
-                               )
+                               );
 
-                                .Skip(model.PageNo * model.PageSize)
-                                .Take(model.PageSize)
-                                .Select(a => new SearchResponseDto
-                                {
-                                    ProductId = a.Id,
-                                    ProductName = a.Product.Name,
-                                    UserId = a.UserId,
-                                    Count = a.Count,
-                                    CreatedAt = a.CreatedAt,
-                                    Description = a.Product.Description,
-                                    UserName = a.User.Name,
-                                    UserLastName = a.User.LastName,
-                                    ProductImageFileName = a.Product.ImageFileName
-                                }
-                )
-                                .ToListAsync();
-            return orders;
+            if (!string.IsNullOrEmpty(model.SortBy))
+            {
+                switch (model.SortBy)
+                {
+                    case "CountAsc":
+                        baskets = baskets.OrderBy(a => a.Count);
+                        break;
+                    case "CountDesc":
+                        baskets = baskets.OrderByDescending(a => a.Count);
+                        break;
+                }
+            }
+
+            baskets = baskets.Skip(model.PageNo * model.PageSize).Take(model.PageSize);
+
+            var searchResults = await baskets
+               .Select(a => new SearchResponseDto
+               {
+                   ProductId = a.Id,
+                   ProductName = a.Product.Name,
+                   UserId = a.UserId,
+                   Count = a.Count,
+                   Description = a.Product.Description,
+                   UserName = a.User.Name,
+                   UserLastName = a.User.LastName,
+                   ProductImageFileName = a.Product.ImageFileName
+               })
+               .ToListAsync();
+
+            return searchResults;
         }
     }
 }

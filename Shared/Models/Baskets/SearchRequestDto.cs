@@ -13,5 +13,6 @@ namespace Shared.Models.Baskets
         public int? Count { get; set; }
         public string? UserName { get; set; }
         public string? ProductName { get; set; }
+        public string? SortBy { get; set; }
     }
 }

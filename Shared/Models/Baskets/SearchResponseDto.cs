@@ -12,7 +12,6 @@ namespace Shared.Models.Baskets
         public string ProductName { get; set; }
         public string Description { get; set; }
         public int Count { get; set; }
-        public DateTime CreatedAt { get; set; }
         public string ProductImageFileName { get; set; }
         public int UserId { get; set; }
         public string UserName { get; set; }
