@@ -87,7 +87,6 @@ namespace IbulakStoreServer.Services
         {
             var products = _context.Products.AsQueryable();
 
-            // Apply filters
             if (model.Count != null)
                 products = products.Where(a => a.Count <= model.Count);
             if (model.FromDate != null)
