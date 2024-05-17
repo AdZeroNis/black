@@ -82,5 +82,7 @@ namespace IbulakStoreServer.Controllers
             var result = await _basketService.SearchAsync(model);
             return Ok(result);
         }
+      
+
     }
 }

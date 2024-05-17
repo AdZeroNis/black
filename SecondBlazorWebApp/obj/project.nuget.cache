@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eCG0M3rSMbPxSztb31Y30HAh4IpHqBMKKvvpQCBBqoe0SGhHLQpfDeR6voGLZTT0k8XmgwD9poHPaQRBRb9gTQ==",
+  "dgSpecHash": "7bsolBkcF7ois9KGlWKJLZ2CAkQM3MmthktUDPZBxYCv7CypVmaddNdzXRsxngSYnIuYX/IUFgVFOKRy+VSpCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
+  "projectFilePath": "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.0\\microsoft.aspnetcore.components.8.0.0.nupkg.sha512",

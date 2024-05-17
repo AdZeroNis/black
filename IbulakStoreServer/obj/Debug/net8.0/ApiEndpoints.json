@@ -59,6 +59,22 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
+    "Method": "GetUserUnfinalizedProductsCount",
+    "RelativePath": "Basket/GetUserUnfinalizedProductsCount/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.BasketController",
     "Method": "GetsByProduct",
     "RelativePath": "Basket/GetsByProduct",
     "HttpMethod": "GET",

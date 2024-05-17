@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D8rZxjzCDd9fKd7M+eTEkqjTkJn7vpoyVHQwzNG9kYMXunlDAF11ej8OOeronX4GTQ+96Wuoh1vk2ogd4IaMgw==",
+  "dgSpecHash": "Vky9q9m7lmPyUn567HR58TZVQyTEQH0Gzxot4qGgBIDCGd/dWE3hrepvK/QbEtlbiU3vuae7FxE1zoJ0sxGBzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\Downloads\\black-master\\black-master\\IbulakStoreServer\\IbulakStoreServer.csproj",
+  "projectFilePath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
