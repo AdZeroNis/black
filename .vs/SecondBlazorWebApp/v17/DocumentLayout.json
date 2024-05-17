@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Asus\\source\\repos\\black\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|c:\\users\\asus\\source\\repos\\black\\shared\\models\\products\\searchrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|solutionrelative:shared\\models\\products\\searchrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\services\\basketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\basketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\controllers\\basketcontrollerr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\controllers\\basketcontrollerr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|c:\\users\\asus\\source\\repos\\black\\shared\\models\\baskets\\searchrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|solutionrelative:shared\\models\\baskets\\searchrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +25,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\services\\orderservicecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\orderservicecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\controllers\\basketcontrollerr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\controllers\\basketcontrollerr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|c:\\users\\asus\\source\\repos\\black\\shared\\models\\orders\\userpurchasecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,24 +47,12 @@
       "RelativeMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|solutionrelative:shared\\models\\orders\\searchresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|c:\\users\\asus\\source\\repos\\black\\shared\\models\\products\\searchrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|solutionrelative:shared\\models\\products\\searchrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|c:\\users\\asus\\source\\repos\\black\\shared\\models\\baskets\\searchresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|solutionrelative:shared\\models\\baskets\\searchresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|c:\\users\\asus\\source\\repos\\black\\shared\\models\\baskets\\searchrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|solutionrelative:shared\\models\\baskets\\searchrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\data\\entities\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\data\\entities\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|c:\\users\\asus\\source\\repos\\black\\ibulakstoreserver\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF7D6AC7-1B51-4824-ACE8-A42671526F6D}|IbulakStoreServer\\IbulakStoreServer.csproj|solutionrelative:ibulakstoreserver\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C86293F6-5522-4856-9C45-5F6D0BE10AA8}|Shared\\Shared.csproj|c:\\users\\asus\\source\\repos\\black\\shared\\models\\products\\searchresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,49 +78,100 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
+              "Title": "SearchRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Orders\\SearchRequestDto.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Orders\\SearchRequestDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Orders\\SearchRequestDto.cs",
+              "RelativeToolTip": "Shared\\Models\\Orders\\SearchRequestDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T12:32:48.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAIwGgAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T08:49:30.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BasketControllerr.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\BasketControllerr.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\BasketControllerr.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\BasketControllerr.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Controllers\\BasketControllerr.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAiwFQAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T08:24:16.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SearchRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Baskets\\SearchRequestDto.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Baskets\\SearchRequestDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Baskets\\SearchRequestDto.cs",
+              "RelativeToolTip": "Shared\\Models\\Baskets\\SearchRequestDto.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T12:29:14.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "BasketService.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\BasketService.cs",
               "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\BasketService.cs",
               "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\BasketService.cs",
               "RelativeToolTip": "IbulakStoreServer\\Services\\BasketService.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAUwHcAAAAJAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAUwFgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T08:25:30.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "SearchRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Products\\SearchRequestDto.cs",
               "RelativeDocumentMoniker": "Shared\\Models\\Products\\SearchRequestDto.cs",
               "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Products\\SearchRequestDto.cs",
               "RelativeToolTip": "Shared\\Models\\Products\\SearchRequestDto.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAiwBMAAAAIAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAiwBAAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T08:34:52.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderServicecs.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\OrderServicecs.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\OrderServicecs.cs",
-              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\OrderServicecs.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Services\\OrderServicecs.cs",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAqwHkAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T08:25:21.453Z",
+              "WhenOpened": "2024-05-17T08:34:52.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\ProductService.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Services\\ProductService.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAuwGEAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T08:32:09.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Data\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Entities\\Order.cs",
@@ -133,44 +184,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "SearchRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Orders\\SearchRequestDto.cs",
-              "RelativeDocumentMoniker": "Shared\\Models\\Orders\\SearchRequestDto.cs",
-              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Orders\\SearchRequestDto.cs",
-              "RelativeToolTip": "Shared\\Models\\Orders\\SearchRequestDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Title": "OrderServicecs.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\OrderServicecs.cs",
+              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\OrderServicecs.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\OrderServicecs.cs",
+              "RelativeToolTip": "IbulakStoreServer\\Services\\OrderServicecs.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAAAFUAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T12:32:48.079Z"
+              "WhenOpened": "2024-05-17T08:25:21.453Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Controllers\\OrderController.cs",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAIwHQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T08:49:30.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BasketControllerr.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\BasketControllerr.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Controllers\\BasketControllerr.cs",
-              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Controllers\\BasketControllerr.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Controllers\\BasketControllerr.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAuwFoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T08:24:16.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "UserPurchaseCount.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Orders\\UserPurchaseCount.cs",
               "RelativeDocumentMoniker": "Shared\\Models\\Orders\\UserPurchaseCount.cs",
@@ -183,18 +208,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "SearchRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Baskets\\SearchRequestDto.cs",
-              "RelativeDocumentMoniker": "Shared\\Models\\Baskets\\SearchRequestDto.cs",
-              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Baskets\\SearchRequestDto.cs",
-              "RelativeToolTip": "Shared\\Models\\Baskets\\SearchRequestDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T12:29:14.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "SearchResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Orders\\SearchResponseDto.cs",
               "RelativeDocumentMoniker": "Shared\\Models\\Orders\\SearchResponseDto.cs",
@@ -206,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Basket.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Data\\Entities\\Basket.cs",
               "RelativeDocumentMoniker": "IbulakStoreServer\\Data\\Entities\\Basket.cs",
@@ -218,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "SearchResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Models\\Baskets\\SearchResponseDto.cs",
               "RelativeDocumentMoniker": "Shared\\Models\\Baskets\\SearchResponseDto.cs",
@@ -226,19 +239,8 @@
               "RelativeToolTip": "Shared\\Models\\Baskets\\SearchResponseDto.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T08:22:30.281Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "IbulakStoreServer\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\Services\\ProductService.cs",
-              "RelativeToolTip": "IbulakStoreServer\\Services\\ProductService.cs",
-              "ViewState": "AQIAAGQAAAAAAAAAAAAAAHQAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T08:32:09.016Z"
+              "WhenOpened": "2024-05-17T08:22:30.281Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

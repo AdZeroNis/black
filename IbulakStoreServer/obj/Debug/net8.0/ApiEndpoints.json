@@ -59,22 +59,6 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
-    "Method": "GetUserUnfinalizedProductsCount",
-    "RelativePath": "Basket/GetUserUnfinalizedProductsCount/{userId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "IbulakStoreServer.Controllers.BasketController",
     "Method": "GetsByProduct",
     "RelativePath": "Basket/GetsByProduct",
     "HttpMethod": "GET",
@@ -141,6 +125,11 @@
       {
         "Name": "SortBy",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductCount",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
     ],
@@ -324,72 +313,6 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "IbulakStoreServer.Controllers.OrderController",
-    "Method": "Search",
-    "RelativePath": "Order/Search",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "PageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "PageNo",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Count",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "FromDate",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "ToDate",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ProductName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "UserLastName",
-        "Type": "System.Nullable\u00601[[System.Char, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "SortBy",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "IbulakStoreServer.Controllers.OrderController",
-    "Method": "GetUserPurchaseCounts",
-    "RelativePath": "Order/UserPurchaseCounts",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {

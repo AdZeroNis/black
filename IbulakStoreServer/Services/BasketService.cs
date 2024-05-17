@@ -79,6 +79,7 @@ namespace IbulakStoreServer.Services
             (model.Count == null || a.Count <= model.Count)
                                && (model.UserName == null || a.User.Name.Contains(model.UserName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
+                               && (model.ProductCount == null || a.Product.Count <= model.ProductCount)
                                );
 
             if (!string.IsNullOrEmpty(model.SortBy))
@@ -103,6 +104,7 @@ namespace IbulakStoreServer.Services
                    ProductName = a.Product.Name,
                    UserId = a.UserId,
                    Count = a.Count,
+                   ProductCount = a.Product.Count,
                    Description = a.Product.Description,
                    UserName = a.User.Name,
                    UserLastName = a.User.LastName,

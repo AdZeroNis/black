@@ -91,6 +91,7 @@ namespace IbulakStoreServer.Services
                     && (model.FromDate == null || a.CreatedAt >= model.FromDate)
                     && (model.ToDate == null || a.CreatedAt <= model.ToDate)
                     && (model.CategoryName == null || a.Category.Name.Contains(model.CategoryName))
+                     && (model.ProductName == null || a.Name.Contains(model.ProductName))
                     && (model.MinPrice == null || a.Price >= model.MinPrice)
                     && (model.MaxPrice == null || a.Price <= model.MaxPrice));
 
