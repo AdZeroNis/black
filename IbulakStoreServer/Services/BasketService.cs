@@ -2,6 +2,7 @@
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Shared.Models.Bascket;
+using Shared.Models.Baskets;
 
 namespace IbulakStoreServer.Services
 {
@@ -70,6 +71,35 @@ namespace IbulakStoreServer.Services
             }
             _context.Baskets.Remove(basket);
             await _context.SaveChangesAsync();
+        }
+        public async Task<List<SearchResponseDto>> SearchAsync(SearchRequestDto model)
+        {
+            var orders = await _context.Orders
+                                .Where(a =>
+                                (model.Count == null || a.Count <= model.Count)
+                               && (model.FromDate == null || a.CreatedAt >= model.FromDate)
+                               && (model.ToDate == null || a.CreatedAt <= model.ToDate)
+                               && (model.UserName == null || a.User.Name.Contains(model.UserName))
+                               && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
+                               )
+
+                                .Skip(model.PageNo * model.PageSize)
+                                .Take(model.PageSize)
+                                .Select(a => new SearchResponseDto
+                                {
+                                    ProductId = a.Id,
+                                    ProductName = a.Product.Name,
+                                    UserId = a.UserId,
+                                    Count = a.Count,
+                                    CreatedAt = a.CreatedAt,
+                                    Description = a.Product.Description,
+                                    UserName = a.User.Name,
+                                    UserLastName = a.User.LastName,
+                                    ProductImageFileName = a.Product.ImageFileName
+                                }
+                )
+                                .ToListAsync();
+            return orders;
         }
     }
 }
