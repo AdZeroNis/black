@@ -368,6 +368,16 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.OrderController",
+    "Method": "GetUserPurchaseCounts",
+    "RelativePath": "Order/UserPurchaseCounts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.OrderController",
     "Method": "Get",
     "RelativePath": "Order/{id}",
     "HttpMethod": "GET",

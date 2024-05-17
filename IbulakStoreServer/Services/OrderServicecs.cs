@@ -127,6 +127,20 @@ namespace IbulakStoreServer.Services
 
             return searchResults;
         }
+        public async Task<List<UserPurchaseCount>> GetUserPurchaseCounts()
+        {
+            var purchaseCounts = await _context.Orders
+               .GroupBy(o => o.UserId)
+               .Select(g => new UserPurchaseCount
+               {
+                   UserId = g.Key,
+                   PurchaseCount = g.Count()
+               })
+               .ToListAsync();
+
+            return purchaseCounts;
+        }
+
     }
 }
 
