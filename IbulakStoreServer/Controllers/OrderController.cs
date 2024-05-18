@@ -102,8 +102,13 @@ namespace IbulakStoreServer.Controllers
             await _orderService.DeleteAsync(id);
             return Ok();
         }
-       
-      
+
+        [HttpGet("Search")]
+        public async Task<IActionResult> Search([FromQuery] SearchRequestDto model)
+        {
+            var result = await _orderService.SearchAsync(model);
+            return Ok(result);
+        }
 
     }
 }
