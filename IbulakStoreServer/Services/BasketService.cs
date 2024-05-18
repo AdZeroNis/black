@@ -100,6 +100,7 @@ namespace IbulakStoreServer.Services
             var searchResults = await baskets
                .Select(a => new SearchResponseDto
                {
+                   BasketId=a.Id,
                    ProductId = a.Id,
                    ProductName = a.Product.Name,
                    UserId = a.UserId,

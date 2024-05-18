@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj": {}
+    "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\IbulakStoreServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj": {
+    "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\IbulakStoreServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
+        "projectUniqueName": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
         "projectName": "IbulakStoreServer",
-        "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\obj\\",
+        "projectPath": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\IbulakStoreServer.csproj",
+        "packagesPath": "C:\\Users\\Sepid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sepid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj"
+              "C:\\Users\\Sepid\\Desktop\\black\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\Sepid\\Desktop\\black\\Shared\\Shared.csproj"
               }
             }
           }
@@ -87,17 +87,17 @@
         }
       }
     },
-    "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj": {
+    "C:\\Users\\Sepid\\Desktop\\black\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Sepid\\Desktop\\black\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\Sepid\\Desktop\\black\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\Sepid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sepid\\Desktop\\black\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sepid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

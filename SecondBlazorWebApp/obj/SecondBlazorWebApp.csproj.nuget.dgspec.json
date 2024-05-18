@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj": {}
+    "C:\\Users\\Sepid\\Desktop\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj": {
+    "C:\\Users\\Sepid\\Desktop\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Sepid\\Desktop\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
         "projectName": "SecondBlazorWebApp",
-        "projectPath": "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\source\\repos\\black\\SecondBlazorWebApp\\obj\\",
+        "projectPath": "C:\\Users\\Sepid\\Desktop\\black\\SecondBlazorWebApp\\SecondBlazorWebApp.csproj",
+        "packagesPath": "C:\\Users\\Sepid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sepid\\Desktop\\black\\SecondBlazorWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sepid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
