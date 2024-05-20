@@ -146,6 +146,10 @@ namespace IbulakStoreServer.Services
 
             return report;
         }
+        public async Task<List<BasketTotalSalesResponseDto>> BasketTotalSalesAsync(BasketTotalSalesRequestDto model)
+        {
+
+        }
 
 
 
