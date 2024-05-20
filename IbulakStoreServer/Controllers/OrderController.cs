@@ -121,6 +121,7 @@ namespace IbulakStoreServer.Controllers
             var result = await _orderService.OrdersTotalByProductNameAsync(model);
             return Ok(result);
         }
+       
 
 
 

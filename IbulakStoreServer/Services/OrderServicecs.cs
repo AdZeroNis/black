@@ -191,10 +191,11 @@ namespace IbulakStoreServer.Services
             }
 
             // Optionally, apply pagination if needed
-            // results = results.Skip((model.PageNo - 1) * model.PageSize).Take(model.PageSize).ToList();
+             results = results.Skip((model.PageNo) * model.PageSize).Take(model.PageSize).ToList();
 
             return results;
         }
+    
 
     }
 }
