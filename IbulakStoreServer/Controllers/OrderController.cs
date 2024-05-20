@@ -115,6 +115,13 @@ namespace IbulakStoreServer.Controllers
             var result = await _orderService.OrdersReportByProductAsync(model);
             return Ok(result);
         }
+        [HttpGet("OrdersTotalByProductName")]
+        public async Task<IActionResult> OrdersTotalByProductName([FromQuery] OrdersTotalByProductNameRequestDto model)
+        {
+            var result = await _orderService.OrdersTotalByProductNameAsync(model);
+            return Ok(result);
+        }
+
 
 
 

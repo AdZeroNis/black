@@ -157,6 +157,31 @@ namespace IbulakStoreServer.Services
             var result = await productsQuery.ToListAsync();
             return result;
         }
+        public async Task<List<OrdersTotalByProductNameResponseDto>> OrdersTotalByProductNameAsync(OrdersTotalByProductNameRequestDto model)
+        {
+            var ordersQuery = _context.Orders.Where(a =>
+                                        (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
+                                        )
+                        .GroupBy(a => a.ProductId)
+                        .Select(a => new
+                        {
+                            ProductId = a.Key,
+                            ProductName = a.FirstOrDefault().Product.Name,
+                            TotalSum = a.Sum(s => s.Price)
+                        });
+
+            var result = await ordersQuery.Skip(model.PageNo * model.PageSize)
+                                        .Take(model.PageSize)
+                                        .Select(a => new OrdersTotalByProductNameResponseDto
+                                        {
+                                            ProductId = a.ProductId,
+                                            ProductName = a.ProductName,
+                                            TotalSum = a.TotalSum
+                                        })
+                                        .ToListAsync();
+            return result;
+        }
+
     }
 }
 
