@@ -720,7 +720,8 @@
       "System.Threading.Channels/6.0.0": {},
       "Shared/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Http": "2.2.2"
+          "Microsoft.AspNetCore.Http": "2.2.2",
+          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.4"
         },
         "runtime": {
           "Shared.dll": {}

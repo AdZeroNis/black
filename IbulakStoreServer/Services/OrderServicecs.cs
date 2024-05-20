@@ -129,18 +129,33 @@ namespace IbulakStoreServer.Services
 
             return searchResults;
         }
-        public async Task<List<UserPurchaseCount>> GetUserPurchaseCounts()
+        public async Task<List<OrderReportByProductResponseDto>> OrdersReportByProductAsync(OrderReportByProductRequestDto model)
         {
-            var purchaseCounts = await _context.Orders
-               .GroupBy(o => o.UserId)
-               .Select(g => new UserPurchaseCount
-               {
-                   UserId = g.Key,
-                   PurchaseCount = g.Count()
-               })
-               .ToListAsync();
+            var ordersQuery = _context.Orders.Where(a =>
+                                (model.FromDate == null || a.CreatedAt >= model.FromDate)
+                               && (model.ToDate == null || a.CreatedAt <= model.ToDate)
+                                )
+                .GroupBy(a => a.ProductId)
+                .Select(a => new
+                {
+                    ProductId = a.Key,
+                    TotalSum = a.Sum(s => s.Price)
+                });
 
-            return purchaseCounts;
+            var productsQuery = from product in _context.Products
+                                from order in ordersQuery.Where(a => a.ProductId == product.Id).DefaultIfEmpty()
+                                select new OrderReportByProductResponseDto
+                                {
+                                    ProductName = product.Name,
+                                    ProductCategoryName = product.Category.Name,
+                                    ProductId = product.Id,
+                                    TotalSum = (int?)order.TotalSum
+                                };
+
+            productsQuery = productsQuery.Skip(model.PageNo * model.PageSize)
+                                .Take(model.PageSize);
+            var result = await productsQuery.ToListAsync();
+            return result;
         }
     }
 }

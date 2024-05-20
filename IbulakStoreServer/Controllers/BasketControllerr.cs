@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Bascket;
 using Shared.Models.Baskets;
 
+
 namespace IbulakStoreServer.Controllers
 {
     [Route("[controller]")]
@@ -82,7 +83,14 @@ namespace IbulakStoreServer.Controllers
             var result = await _basketService.SearchAsync(model);
             return Ok(result);
         }
-      
+        [HttpGet("BasketReportByUser")]
+        public async Task<IActionResult> BasketReportByUser([FromQuery] BasketReportByUserRequestDto model)
+        {
+            var result = await _basketService.BasketReportByUserAsync(model);
+            return Ok(result);
+        }
+
+
 
     }
 }
