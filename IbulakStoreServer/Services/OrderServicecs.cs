@@ -159,27 +159,41 @@ namespace IbulakStoreServer.Services
         }
         public async Task<List<OrdersTotalByProductNameResponseDto>> OrdersTotalByProductNameAsync(OrdersTotalByProductNameRequestDto model)
         {
-            var ordersQuery = _context.Orders.Where(a =>
-                                        (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
-                                        )
-                        .GroupBy(a => a.ProductId)
-                        .Select(a => new
-                        {
-                            ProductId = a.Key,
-                            ProductName = a.FirstOrDefault().Product.Name,
-                            TotalSum = a.Sum(s => s.Price)
-                        });
+            // Calculate the total sum of orders for all products that match the product name filter
+            var totalSum = await _context.Orders
+                                     .Where(a => model.ProductName == null || a.Product.Name.Contains(model.ProductName))
+                                     .SumAsync(o => o.Price * o.Count); // Summing up the total price of all orders
 
-            var result = await ordersQuery.Skip(model.PageNo * model.PageSize)
-                                        .Take(model.PageSize)
-                                        .Select(a => new OrdersTotalByProductNameResponseDto
-                                        {
-                                            ProductId = a.ProductId,
-                                            ProductName = a.ProductName,
-                                            TotalSum = a.TotalSum
-                                        })
-                                        .ToListAsync();
-            return result;
+            // Create a list to hold the results
+            List<OrdersTotalByProductNameResponseDto> results = new List<OrdersTotalByProductNameResponseDto>();
+
+            // Query to fetch the details of each product along with its total sum of orders
+            var ordersQuery = _context.Orders
+                                   .Where(a => model.ProductName == null || a.Product.Name.Contains(model.ProductName))
+                                   .GroupBy(a => a.ProductId)
+                                   .Select(a => new
+                                   {
+                                       ProductId = a.Key,
+                                       ProductName = a.FirstOrDefault().Product.Name,
+                                       TotalSum = a.Sum(s => s.Price * s.Count) // Calculating the sum of orders for each product
+                                   });
+
+            // Convert the query to a list and process each item
+            foreach (var item in await ordersQuery.ToListAsync())
+            {
+                // Add the total sum of orders for each product to the results list
+                results.Add(new OrdersTotalByProductNameResponseDto
+                {
+                    ProductName = item.ProductName,
+                    ProductId = item.ProductId,
+                    TotalSum = item.TotalSum
+                });
+            }
+
+            // Optionally, apply pagination if needed
+            // results = results.Skip((model.PageNo - 1) * model.PageSize).Take(model.PageSize).ToList();
+
+            return results;
         }
 
     }
