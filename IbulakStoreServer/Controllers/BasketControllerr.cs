@@ -89,12 +89,6 @@ namespace IbulakStoreServer.Controllers
             var result = await _basketService.BasketReportByUserAsync(model);
             return Ok(result);
         }
-        [HttpGet("BasketTotalSales")]
-        public async Task<IActionResult> BasketTotalSales([FromQuery] BasketTotalSalesRequestDto model)
-        {
-            var result = await _basketService.BasketTotalSalesAsync(model);
-            return Ok(result);
-        }
 
 
     }

@@ -15,6 +15,6 @@ namespace IbulakStoreServer.Data.Entities
 
         public virtual User User { get; set; } = default!;
         public virtual Product Product { get; set; } = default!;
-        
+        public DateTime CreatedAt { get; internal set; }
     }
 }
