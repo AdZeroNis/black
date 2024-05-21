@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "IbulakStoreServer.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "Authentication/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "Shared.Models.Authentication.LoginRequestDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "useCookies",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "useSessionCookies",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.AuthenticationController",
     "Method": "Register",
     "RelativePath": "Authentication/Register",
     "HttpMethod": "POST",

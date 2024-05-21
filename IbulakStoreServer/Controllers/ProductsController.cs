@@ -44,17 +44,15 @@ namespace IbulakStoreServer.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Add(ProductAddRequestDto product)
         {
-            var category = await _productService.FindByIdAsync(product.CategoryId);
-            if (category == null)
-            {
-                return NotFound();
-            }
-
             await _productService.AddAsync(product);
             return Ok();
         }
+
         [HttpPut]
         public async Task<IActionResult> Edit([FromBody]Product product)
         {
