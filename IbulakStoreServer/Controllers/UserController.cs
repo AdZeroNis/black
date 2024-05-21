@@ -20,7 +20,7 @@ namespace IbulakStoreServer.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get(string id)
         {
             var result = await _userService.GetAsync(id);
             if (result == null)
@@ -35,7 +35,8 @@ namespace IbulakStoreServer.Controllers
             var result = await _userService.GetsAsync();
             return Ok(result);
         }
-      
+
+
         [HttpPost]
         public async Task<IActionResult> Add(UserAddRequestDto user)
         {
@@ -44,13 +45,13 @@ namespace IbulakStoreServer.Controllers
             return Ok();
         }
         [HttpPut]
-        public async Task<IActionResult> Edit([FromBody] User user)
+        public async Task<IActionResult> Edit([FromBody] AppUser user)
         {
             await _userService.EditAsync(user);
             return Ok();
         }
         [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
             await _userService.DeleteAsync(id);
             return Ok();

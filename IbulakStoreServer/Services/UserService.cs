@@ -2,6 +2,7 @@
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Shared.Models.User;
+using System.Xml.Linq;
 
 namespace IbulakStoreServer.Services
 {
@@ -12,49 +13,61 @@ namespace IbulakStoreServer.Services
         {
             _context = context;
         }
-        public async Task<User?> GetAsync(int id)
+        public async Task<AppUser?> GetAsync(string id)
         {
-            User? user = await _context.Users.FindAsync(id);
+            AppUser? user = await _context.Users.FindAsync(id);
             return user;
         }
-        public async Task<List<User>> GetsAsync()
+      
+
+        public async Task<List<AppUser>> GetsAsync()
         {
-            List<User> users = await _context.Users.ToListAsync();
+            List<AppUser> users = await _context.Users.ToListAsync();
             return users;
         }
         public async Task AddAsync(UserAddRequestDto model)
         {
-            User user = new User
+            AppUser user = new AppUser
             {
-                Name = model.Name,
-                LastName = model.LastName
-            
+               
+                FullName = model.FullName
+
 
             };
-            _context.Users.Add(user);
+            _context.Entry(user).State = EntityState.Added;
+
             await _context.SaveChangesAsync();
         }
-        public async Task EditAsync(User user)
+        public async Task EditAsync(AppUser user)
         {
-            User? oldUser = await _context.Users.FindAsync(user.Id);
-            if (oldUser is null)
+            // Find the existing user by their Id
+            var oldUser = await _context.Users.FindAsync(user.Id);
+
+            if (oldUser == null)
             {
                 throw new Exception("کاربری با این شناسه پیدا نشد.");
             }
-            oldUser.Name = user.Name;
-            oldUser.LastName = user.LastName;
-            _context.Users.Update(oldUser);
+
+            // Update the properties of the found user
+            oldUser.FullName = user.FullName;
+
+            // Mark the user as modified so EF knows to update it in the database
+            _context.Entry(oldUser).State = EntityState.Modified;
+
+            // Save changes to persist the updates
             await _context.SaveChangesAsync();
         }
-        public async Task DeleteAsync(int id)
+
+        public async Task DeleteAsync(string id)
         {
-            User? user = await _context.Users.FindAsync(id);
+            AppUser? user = await _context.Users.FindAsync(id);
             if (user is null)
             {
                 throw new Exception("کاربری با این شناسه پیدا نشد.");
             }
-            _context.Users.Remove(user);
+            _context.Entry(user).State = EntityState.Deleted;
             await _context.SaveChangesAsync();
+
         }
 
         internal async Task EditAsync(object user)

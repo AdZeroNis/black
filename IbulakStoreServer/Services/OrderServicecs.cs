@@ -32,7 +32,7 @@ namespace IbulakStoreServer.Services
             List<Order> orders = await _context.Orders.Where(order => order.ProductId == productId).ToListAsync();
             return order;
         }
-        public async Task<List<Order>> GetsByUserAsync(int userId)
+        public async Task<List<Order>> GetsByUserAsync(string userId)
         {
             List<Order> orders = await _context.Orders.Where(order => order.UserId == userId).ToListAsync();
             return order;
@@ -91,7 +91,7 @@ namespace IbulakStoreServer.Services
             (model.Count == null || a.Count <= model.Count)
                                && (model.FromDate == null || a.CreatedAt >= model.FromDate)
                                && (model.ToDate == null || a.CreatedAt <= model.ToDate)
-                               && (model.UserName == null || a.User.Name.Contains(model.UserName))
+                               && (model.FullName == null || a.User.FullName.Contains(model.FullName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
                                );
 
@@ -121,8 +121,7 @@ namespace IbulakStoreServer.Services
                    Price = a.Price,
                    CreatedAt = a.CreatedAt,
                    Description = a.Product.Description,
-                   UserName = a.User.Name,
-                   UserLastName = a.User.LastName,
+                   FullName = a.User.FullName,
                    ProductImageFileName = a.Product.ImageFileName
                })
                .ToListAsync();

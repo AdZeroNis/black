@@ -1,5 +1,6 @@
 ﻿using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Category;
@@ -17,6 +18,7 @@ namespace IbulakStoreServer.Controllers
         {
             _categoryService=categoryService;
         }
+        [Authorize(Roles = "User")]
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
@@ -30,6 +32,7 @@ namespace IbulakStoreServer.Controllers
             var result = await _categoryService.GetsAsync();
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Add(CategoryAddRequestDto category)
         {

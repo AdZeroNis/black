@@ -36,6 +36,10 @@ namespace IbulakStoreServer.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("INTEGER");
 
@@ -79,6 +83,25 @@ namespace IbulakStoreServer.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "2426167f-842e-4933-ae72-d8dfe34abf78",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "b5acdc6d-2bba-4b92-946e-d4356c793e98",
+                            Email = "shaghayeghkrimi2923@gmail.com",
+                            EmailConfirmed = true,
+                            FullName = "شقایق کریمی",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "shaghayeghkrimi2923@gmail.com",
+                            NormalizedUserName = "09119660028",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDBL6s6JPZ0lCgaL2YPo3rYMzSNK4VNOMBiGKyzhhz+urcEehSki9GWvw44OpedyYg==",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "09119660028"
+                        });
                 });
 
             modelBuilder.Entity("IbulakStoreServer.Data.Entities.Basket", b =>
@@ -96,8 +119,9 @@ namespace IbulakStoreServer.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -145,8 +169,9 @@ namespace IbulakStoreServer.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -194,25 +219,6 @@ namespace IbulakStoreServer.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -237,6 +243,20 @@ namespace IbulakStoreServer.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "a2a2df88-2952-408d-9c34-eca9177d92ac",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "cfad0d31-c0e8-41d2-894f-f27320d55f47",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -320,6 +340,13 @@ namespace IbulakStoreServer.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "2426167f-842e-4933-ae72-d8dfe34abf78",
+                            RoleId = "a2a2df88-2952-408d-9c34-eca9177d92ac"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -349,7 +376,7 @@ namespace IbulakStoreServer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IbulakStoreServer.Data.Entities.User", "User")
+                    b.HasOne("IbulakStoreServer.Data.Entities.AppUser", "User")
                         .WithMany("Baskets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -368,7 +395,7 @@ namespace IbulakStoreServer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IbulakStoreServer.Data.Entities.User", "User")
+                    b.HasOne("IbulakStoreServer.Data.Entities.AppUser", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -441,19 +468,19 @@ namespace IbulakStoreServer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Category", b =>
-                {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Product", b =>
+            modelBuilder.Entity("IbulakStoreServer.Data.Entities.AppUser", b =>
                 {
                     b.Navigation("Baskets");
 
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("IbulakStoreServer.Data.Entities.User", b =>
+            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("IbulakStoreServer.Data.Entities.Product", b =>
                 {
                     b.Navigation("Baskets");
 

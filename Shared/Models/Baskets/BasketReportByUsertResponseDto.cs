@@ -9,7 +9,7 @@ namespace Shared.Models.Baskets
     public class BasketReportByUsertResponseDto
     {
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int Count { get; set; }

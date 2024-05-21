@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "IbulakStoreServer.Controllers.AuthenticationController",
+    "Method": "Register",
+    "RelativePath": "Authentication/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Shared.Models.Authentication.RegisterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
     "Method": "Gets",
     "RelativePath": "Basket",
@@ -77,7 +93,7 @@
       },
       {
         "Name": "UserId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -109,7 +125,7 @@
     "Parameters": [
       {
         "Name": "userId",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -139,7 +155,7 @@
         "IsRequired": false
       },
       {
-        "Name": "UserName",
+        "Name": "FullName",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -335,7 +351,7 @@
     "Parameters": [
       {
         "Name": "userId",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -432,18 +448,13 @@
         "IsRequired": false
       },
       {
-        "Name": "UserName",
+        "Name": "FullName",
         "Type": "System.String",
         "IsRequired": false
       },
       {
         "Name": "ProductName",
         "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "UserLastName",
-        "Type": "System.Nullable\u00601[[System.Char, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -657,7 +668,7 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "IbulakStoreServer.Data.Entities.User",
+        "Type": "IbulakStoreServer.Data.Entities.AppUser",
         "IsRequired": true
       }
     ],
@@ -673,7 +684,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -689,7 +700,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

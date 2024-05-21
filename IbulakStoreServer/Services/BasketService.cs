@@ -35,7 +35,7 @@ namespace IbulakStoreServer.Services
             List<Basket> baskets = await _context.Baskets.Where(basket => basket.ProductId == ProductId).ToListAsync();
             return basket;
         }
-        public async Task<List<Basket>> GetsByUserAsync(int userId)
+        public async Task<List<Basket>> GetsByUserAsync(string userId)
         {
             List<Basket> baskets = await _context.Baskets.Where(basket => basket.UserId == userId).ToListAsync();
             return basket;
@@ -80,7 +80,7 @@ namespace IbulakStoreServer.Services
             IQueryable<Basket> baskets = _context.Baskets
                .Where(a =>
             (model.Count == null || a.Count <= model.Count)
-                               && (model.UserName == null || a.User.Name.Contains(model.UserName))
+                               && (model.FullName == null || a.User.FullName.Contains(model.FullName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
                                && (model.ProductCount == null || a.Product.Count <= model.ProductCount)
                                );
@@ -110,8 +110,7 @@ namespace IbulakStoreServer.Services
                    Count = a.Count,
                    ProductCount = a.Product.Count,
                    Description = a.Product.Description,
-                   UserName = a.User.Name,
-                   UserLastName = a.User.LastName,
+                   FullName = a.User.FullName,
                    ProductImageFileName = a.Product.ImageFileName
                })
                .ToListAsync();
@@ -137,7 +136,7 @@ namespace IbulakStoreServer.Services
             // Convert to DTOs and calculate total sum for each product
             var report = userBaskets.Select(a => new BasketReportByUsertResponseDto
             {
-                UserId = (int)model.UserId,
+                UserId =model.UserId,
                 ProductId = a.Product.Id,
                 ProductName = a.Product.Name,
                 Count = a.Count,
