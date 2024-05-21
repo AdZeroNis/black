@@ -1,11 +1,12 @@
 ﻿using IbulakStoreServer.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata;
 
 namespace IbulakStoreServer.Data.Domain
 {
-    public class StoreDbContext : DbContext
-    {
+    public class StoreDbContext : IdentityDbContext<AppUser>
+    { 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<User> Users { get; set; }

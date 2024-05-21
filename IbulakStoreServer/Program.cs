@@ -1,5 +1,7 @@
 using IbulakStoreServer.Data.Domain;
+using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,9 +22,21 @@ builder.Services.AddCors(options =>
                         .AllowCredentials()
                         .Build());
 });
+builder.Services.AddAuthorization();
 
 builder.Services.AddDbContext<StoreDbContext>(options =>
   options.UseSqlite(builder.Configuration.GetConnectionString("WebApiDatabase")));
+builder.Services
+    .AddIdentityApiEndpoints<AppUser>(options =>
+    {
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireDigit = false;
+        options.Password.RequiredLength = 6;
+    })
+        .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<StoreDbContext>();
 
 
 builder.Services.AddScoped<ProductService>();
@@ -55,5 +69,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGroup("/account").MapIdentityApi<AppUser>();
 
 app.Run();
