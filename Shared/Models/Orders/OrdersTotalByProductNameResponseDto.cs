@@ -11,5 +11,7 @@ namespace Shared.Models.Orders
         public string ProductName { get; set; }
         public int ProductId { get; set; }
         public int? TotalSum { get; set; }
+        
+
     }
 }

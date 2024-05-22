@@ -1,5 +1,6 @@
 ﻿using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Bascket;
@@ -20,6 +21,7 @@ namespace IbulakStoreServer.Controllers
             _basketService = basketService;
             _productService = productService;
         }
+        
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)

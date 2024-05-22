@@ -158,43 +158,40 @@ namespace IbulakStoreServer.Services
         }
         public async Task<List<OrdersTotalByProductNameResponseDto>> OrdersTotalByProductNameAsync(OrdersTotalByProductNameRequestDto model)
         {
-            // Calculate the total sum of orders for all products that match the product name filter
-            var totalSum = await _context.Orders
-                                     .Where(a => model.ProductName == null || a.Product.Name.Contains(model.ProductName))
-                                     .SumAsync(o => o.Price * o.Count); // Summing up the total price of all orders
+            // First, filter products by name if a product name is provided
+            var filteredProducts = _context.Products
+                                             .Where(p => model.ProductName == null || p.Name.Contains(model.ProductName));
 
-            // Create a list to hold the results
-            List<OrdersTotalByProductNameResponseDto> results = new List<OrdersTotalByProductNameResponseDto>();
+            // Then, join orders with the filtered products to calculate the total sum for each product
+            var ordersWithFilteredProducts = await _context.Orders
+                                                             .Join(filteredProducts,
+                                                                   order => order.ProductId,
+                                                                   product => product.Id,
+                                                                   (order, product) => new { Order = order, Product = product })
+                                                                 .GroupBy(x => x.Order.ProductId)
+                                                                 .Select(g => new
+                                                                 {
+                                                                     ProductId = g.Key,
+                                                                     TotalSum = g.Sum(x => x.Order.Price * x.Order.Count),
+                                                                     ProductName = g.FirstOrDefault().Product.Name // Set the ProductName property
+                                                                 })
+                                                                 .ToListAsync();
 
-            // Query to fetch the details of each product along with its total sum of orders
-            var ordersQuery = _context.Orders
-                                   .Where(a => model.ProductName == null || a.Product.Name.Contains(model.ProductName))
-                                   .GroupBy(a => a.ProductId)
-                                   .Select(a => new
-                                   {
-                                       ProductId = a.Key,
-                                       ProductName = a.FirstOrDefault().Product.Name,
-                                       TotalSum = a.Sum(s => s.Price * s.Count) // Calculating the sum of orders for each product
-                                   });
-
-            // Convert the query to a list and process each item
-            foreach (var item in await ordersQuery.ToListAsync())
+            // Finally, convert the results to DTOs
+            var result = ordersWithFilteredProducts.Select(o => new OrdersTotalByProductNameResponseDto
             {
-                // Add the total sum of orders for each product to the results list
-                results.Add(new OrdersTotalByProductNameResponseDto
-                {
-                    ProductName = item.ProductName,
-                    ProductId = item.ProductId,
-                    TotalSum = item.TotalSum
-                });
-            }
+                ProductName = o.ProductName,
+                ProductId = o.ProductId,
+                TotalSum = o.TotalSum  // Ensure TotalSum has a default value
+            }).ToList();
 
-            // Optionally, apply pagination if needed
-             results = results.Skip((model.PageNo) * model.PageSize).Take(model.PageSize).ToList();
+            // Apply pagination
+            result = result.Skip((model.PageNo) * model.PageSize).Take(model.PageSize).ToList();
 
-            return results;
+            return result;
         }
-    
+
+
 
     }
 }

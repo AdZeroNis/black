@@ -1,6 +1,7 @@
 ﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,7 @@ namespace IbulakStoreServer.Controllers
             _orderService = orderService;
             _context = context;
         }
+        [Authorize(Roles = "User")]
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
@@ -116,12 +118,12 @@ namespace IbulakStoreServer.Controllers
             return Ok(result);
         }
         [HttpGet("OrdersTotalByProductName")]
-        public async Task<IActionResult> OrdersTotalByProductName([FromQuery] OrdersTotalByProductNameRequestDto model)
-        {
+       public async Task<IActionResult> OrdersTotalByProductName([FromQuery]OrdersTotalByProductNameRequestDto model)
+      {
             var result = await _orderService.OrdersTotalByProductNameAsync(model);
-            return Ok(result);
-        }
-       
+             return Ok(result);
+       }
+
 
 
 
