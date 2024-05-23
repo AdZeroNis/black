@@ -3,6 +3,7 @@ using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Shared.Models.Order;
 using Shared.Models.Orders;
+using System.Reflection.Metadata.Ecma335;
 
 namespace IbulakStoreServer.Services
 {
@@ -32,7 +33,7 @@ namespace IbulakStoreServer.Services
             List<Order> orders = await _context.Orders.Where(order => order.ProductId == productId).ToListAsync();
             return order;
         }
-        public async Task<List<Order>> GetsByUserAsync(int userId)
+        public async Task<List<Order>> GetsByUserAsync(string userId)
         {
             List<Order> orders = await _context.Orders.Where(order => order.UserId == userId).ToListAsync();
             return order;
@@ -91,7 +92,7 @@ namespace IbulakStoreServer.Services
             (model.Count == null || a.Count <= model.Count)
                                && (model.FromDate == null || a.CreatedAt >= model.FromDate)
                                && (model.ToDate == null || a.CreatedAt <= model.ToDate)
-                               && (model.UserName == null || a.User.Name.Contains(model.UserName))
+                               && (model.FullName == null || a.User.FullName.Contains(model.FullName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
                                );
 
@@ -113,7 +114,7 @@ namespace IbulakStoreServer.Services
             var searchResults = await orders
                .Select(a => new SearchResponseDto
                {
-                   OrderId=a.Id,
+                   OrderId = a.Id,
                    ProductId = a.Id,
                    ProductName = a.Product.Name,
                    UserId = a.UserId,
@@ -121,26 +122,95 @@ namespace IbulakStoreServer.Services
                    Price = a.Price,
                    CreatedAt = a.CreatedAt,
                    Description = a.Product.Description,
-                   UserName = a.User.Name,
-                   UserLastName = a.User.LastName,
+                   FullName = a.User.FullName,
                    ProductImageFileName = a.Product.ImageFileName
                })
                .ToListAsync();
 
             return searchResults;
         }
-        public async Task<List<UserPurchaseCount>> GetUserPurchaseCounts()
+        public async Task<List<OrderReportByProductResponseDto>> OrdersReportByProductAsync(OrderReportByProductRequestDto model)
         {
-            var purchaseCounts = await _context.Orders
-               .GroupBy(o => o.UserId)
-               .Select(g => new UserPurchaseCount
-               {
-                   UserId = g.Key,
-                   PurchaseCount = g.Count()
-               })
-               .ToListAsync();
+            var ordersQuery = _context.Orders.Where(a =>
+                                (model.FromDate == null || a.CreatedAt >= model.FromDate)
+                               && (model.ToDate == null || a.CreatedAt <= model.ToDate)
+                                )
+                .GroupBy(a => a.ProductId)
+                .Select(a => new
+                {
+                    ProductId = a.Key,
+                    TotalSum = a.Sum(s => s.Count)
+                });
 
-            return purchaseCounts;
+            var productsQuery = from product in _context.Products
+                                from order in ordersQuery.Where(a => a.ProductId == product.Id).DefaultIfEmpty()
+                                select new OrderReportByProductResponseDto
+                                {
+                                    ProductName = product.Name,
+                                    ProductCategoryName = product.Category.Name,
+                                    ProductId = product.Id,
+                                    TotalSum = (int?)order.TotalSum
+                                };
+
+            productsQuery = productsQuery.Skip(model.PageNo * model.PageSize)
+                                .Take(model.PageSize);
+            var result = await productsQuery.ToListAsync();
+            return result;
+        }
+        public async Task<List<OrdersTotalByProductNameResponseDto>> OrdersTotalByProductNameAsync(OrdersTotalByProductNameRequestDto model)
+        {
+            // First, filter products by name if a product name is provided
+            var filteredProducts = _context.Products
+                                             .Where(p => model.ProductName == null || p.Name.Contains(model.ProductName));
+
+            // Then, join orders with the filtered products to calculate the total sum for each product
+            var ordersWithFilteredProducts = await _context.Orders
+                                                             .Join(filteredProducts,
+                                                                   order => order.ProductId,
+                                                                   product => product.Id,
+                                                                   (order, product) => new { Order = order, Product = product })
+                                                                 .GroupBy(x => x.Order.ProductId)
+                                                                 .Select(g => new
+                                                                 {
+                                                                     ProductId = g.Key,
+                                                                     TotalSum = g.Sum(x => x.Order.Price * x.Order.Count),
+                                                                     ProductName = g.FirstOrDefault().Product.Name // Set the ProductName property
+                                                                 })
+                                                                 .ToListAsync();
+
+            // Finally, convert the results to DTOs
+            var result = ordersWithFilteredProducts.Select(o => new OrdersTotalByProductNameResponseDto
+            {
+                ProductName = o.ProductName,
+                ProductId = o.ProductId,
+                TotalSum = o.TotalSum  // Ensure TotalSum has a default value
+            }).ToList();
+
+            // Apply pagination
+            result = result.Skip((model.PageNo) * model.PageSize).Take(model.PageSize).ToList();
+
+            return result;
+        }
+        public async Task<List<OrderAllTotalResponseDto>> OrderTotalAsync(orderAllTotalRequestDto model)
+        {
+            var totalSum = await _context.Orders
+                .Select(o => o.Price * o.Count)
+                .SumAsync();
+
+            var count = await _context.Orders.CountAsync();
+
+            var result = new List<OrderAllTotalResponseDto>
+    {
+           new OrderAllTotalResponseDto
+        {
+            TotalSum = totalSum,
+            Count = count
+        }
+    };
+
+            result = result.Skip((model.PageNo) * model.PageSize).Take(model.PageSize).ToList();
+
+            return result;
         }
     }
 }

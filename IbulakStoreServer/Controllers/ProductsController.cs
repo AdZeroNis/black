@@ -1,11 +1,12 @@
 ﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Product;
 using Shared.Models.Products;
-using Shared.Models.Products;
+
 
 namespace IbulakStoreServer.Controllers
 {
@@ -19,6 +20,7 @@ namespace IbulakStoreServer.Controllers
         {
             _productService = productService;
         }
+        [Authorize(Roles = "User")]
 
 
         [HttpGet("{id}")]
@@ -40,19 +42,17 @@ namespace IbulakStoreServer.Controllers
             return Ok(result);
         }
 
-       
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
         [HttpPost]
         public async Task<IActionResult> Add(ProductAddRequestDto product)
         {
-            var category = await _productService.FindByIdAsync(product.CategoryId);
-            if (category == null)
-            {
-                return NotFound();
-            }
-
             await _productService.AddAsync(product);
             return Ok();
         }
+
         [HttpPut]
         public async Task<IActionResult> Edit([FromBody]Product product)
         {
@@ -72,5 +72,13 @@ namespace IbulakStoreServer.Controllers
             var result = await _productService.SearchAsync(model);
             return Ok(result);
         }
+        [HttpGet("ProductNotExit")]
+        public async Task<IActionResult> ProductNotExit([FromQuery] ProductExitRequestDto model)
+        {
+            var result = await _productService.ProductNotExitAsync(model);
+            return Ok(result);
+        }
+
+
     }
 }

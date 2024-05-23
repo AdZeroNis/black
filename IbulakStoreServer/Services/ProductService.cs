@@ -14,16 +14,16 @@ namespace IbulakStoreServer.Services
         private readonly StoreDbContext _context;
         public ProductService(StoreDbContext context)
         {
-            _context=context;
+            _context = context;
         }
         public Product? Get(int id)
         {
-            Product? product =  _context.Products.Find(id);
+            Product? product = _context.Products.Find(id);
             return product;
         }
         public async Task<Product?> GetAsync(int id)
         {
-            Product? product =await _context.Products.FindAsync(id);
+            Product? product = await _context.Products.FindAsync(id);
             return product;
         }
         public async Task<Product?> FindByIdAsync(int id)
@@ -31,6 +31,7 @@ namespace IbulakStoreServer.Services
             Product? product = await _context.Products.FindAsync(id);
             return product;
         }
+
         public async Task<List<Product>> GetsAsync()
         {
             List<Product> products = await _context.Products.ToListAsync();
@@ -38,7 +39,7 @@ namespace IbulakStoreServer.Services
         }
         public async Task<List<Product>> GetsByCategoryAsync(int categoryId)
         {
-            List<Product> products = await _context.Products.Where(product=> product.CategoryId== categoryId).ToListAsync();
+            List<Product> products = await _context.Products.Where(product => product.CategoryId == categoryId).ToListAsync();
             return products;
         }
         public async Task AddAsync(ProductAddRequestDto model)
@@ -48,10 +49,10 @@ namespace IbulakStoreServer.Services
                 CategoryId = model.CategoryId,
                 Count = model.Count,
                 Name = model.Name,
-                Description=model.Description,
-                ImageFileName=model.ImageFileName,
-                CreatedAt=model.CreatedAt,
-                Price=model.Price
+                Description = model.Description,
+                ImageFileName = model.ImageFileName,
+                CreatedAt = model.CreatedAt,
+                Price = model.Price
 
             };
             _context.Products.Add(product);
@@ -64,8 +65,8 @@ namespace IbulakStoreServer.Services
             {
                 throw new Exception("محصولی با این شناسه پیدا نشد.");
             }
-            oldProduct.Price=product.Price;
-            oldProduct.Name=product.Name;
+            oldProduct.Price = product.Price;
+            oldProduct.Name = product.Name;
             oldProduct.Description = product.Description;
             oldProduct.ImageFileName = product.ImageFileName;
             oldProduct.Count = product.Count;
@@ -128,6 +129,26 @@ namespace IbulakStoreServer.Services
 
             return searchResults;
         }
+        public async Task<List<ProductExitResponseDto>> ProductNotExitAsync(ProductExitRequestDto model)
+        {
+            IQueryable<Product> products = _context.Products
+           .Where(a =>
+           a.Count == 0 &&
+           (model.ProductName == null || a.Name.Contains(model.ProductName)));
+
+            products = products.Skip(model.PageNo * model.PageSize).Take(model.PageSize);
+
+            var searchResults = await products
+                .Select(a => new ProductExitResponseDto
+                {
+                    Availability = a.Count > 0 ? "موجود" : "ناموجود"
+                })
+                .ToListAsync();
+
+            return searchResults;
+        }
 
     }
-}
+
+
+    }

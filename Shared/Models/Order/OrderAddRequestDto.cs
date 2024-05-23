@@ -9,9 +9,10 @@ namespace Shared.Models.Order
 {
     public class OrderAddRequestDto
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int Price { get; set; }
         public int Count { get; set; }
         public int ProductId { get; set; }
+
     }
 }

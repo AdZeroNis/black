@@ -1,9 +1,11 @@
 ﻿using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Bascket;
 using Shared.Models.Baskets;
+
 
 namespace IbulakStoreServer.Controllers
 {
@@ -19,6 +21,7 @@ namespace IbulakStoreServer.Controllers
             _basketService = basketService;
             _productService = productService;
         }
+        
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
@@ -39,7 +42,7 @@ namespace IbulakStoreServer.Controllers
             return Ok(result);
         }
         [HttpGet("GetsByUser")]
-        public async Task<IActionResult> GetsByUser(int userId)
+        public async Task<IActionResult> GetsByUser(string userId)
         {
             var result = await _basketService.GetsByUserAsync(userId);
             return Ok(result);
@@ -82,7 +85,13 @@ namespace IbulakStoreServer.Controllers
             var result = await _basketService.SearchAsync(model);
             return Ok(result);
         }
-      
+        [HttpGet("BasketReportByUser")]
+        public async Task<IActionResult> BasketReportByUser([FromQuery] BasketReportByUserRequestDto model)
+        {
+            var result = await _basketService.BasketReportByUserAsync(model);
+            return Ok(result);
+        }
+
 
     }
 }

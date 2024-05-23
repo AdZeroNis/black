@@ -19,5 +19,6 @@ namespace Shared.Models.Products
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategoryImageFileName { get; set; }
+       
     }
 }

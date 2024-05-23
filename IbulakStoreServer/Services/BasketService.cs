@@ -1,8 +1,11 @@
 ﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using Shared.Models.Bascket;
 using Shared.Models.Baskets;
+using Shared.Models.Orders;
+using System.Reflection.Metadata;
 
 namespace IbulakStoreServer.Services
 {
@@ -32,7 +35,7 @@ namespace IbulakStoreServer.Services
             List<Basket> baskets = await _context.Baskets.Where(basket => basket.ProductId == ProductId).ToListAsync();
             return basket;
         }
-        public async Task<List<Basket>> GetsByUserAsync(int userId)
+        public async Task<List<Basket>> GetsByUserAsync(string userId)
         {
             List<Basket> baskets = await _context.Baskets.Where(basket => basket.UserId == userId).ToListAsync();
             return basket;
@@ -72,12 +75,12 @@ namespace IbulakStoreServer.Services
             _context.Baskets.Remove(basket);
             await _context.SaveChangesAsync();
         }
-        public async Task<List<SearchResponseDto>> SearchAsync(SearchRequestDto model)
+        public async Task<List<Shared.Models.Baskets.SearchResponseDto>> SearchAsync(Shared.Models.Baskets.SearchRequestDto model)
         {
             IQueryable<Basket> baskets = _context.Baskets
                .Where(a =>
             (model.Count == null || a.Count <= model.Count)
-                               && (model.UserName == null || a.User.Name.Contains(model.UserName))
+                               && (model.FullName == null || a.User.FullName.Contains(model.FullName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
                                && (model.ProductCount == null || a.Product.Count <= model.ProductCount)
                                );
@@ -98,22 +101,60 @@ namespace IbulakStoreServer.Services
             baskets = baskets.Skip(model.PageNo * model.PageSize).Take(model.PageSize);
 
             var searchResults = await baskets
-               .Select(a => new SearchResponseDto
+               .Select(a => new Shared.Models.Baskets.SearchResponseDto
                {
-                   BasketId=a.Id,
-                   ProductId = a.Id,
+                   BasketId = a.Id,
+                   ProductId = a.Product.Id,
                    ProductName = a.Product.Name,
                    UserId = a.UserId,
                    Count = a.Count,
                    ProductCount = a.Product.Count,
                    Description = a.Product.Description,
-                   UserName = a.User.Name,
-                   UserLastName = a.User.LastName,
+                   FullName = a.User.FullName,
                    ProductImageFileName = a.Product.ImageFileName
                })
                .ToListAsync();
 
             return searchResults;
         }
+
+     
+ public async Task<List<BasketReportByUsertResponseDto>> BasketReportByUserAsync(BasketReportByUserRequestDto model)
+        {
+            // Query to get all baskets for the given user
+            var userBaskets = await _context.Baskets
+               .Where(b => b.UserId == model.UserId)
+               .GroupBy(b => b.ProductId) // Group by ProductId
+               .Select(g => new
+               {
+                   g.Key, // ProductId
+                   Count = g.Sum(b => b.Count), // Sum of counts for each product
+                   Product = g.First().Product // Assuming each product ID is unique within the user's basket
+               })
+               .ToListAsync();
+
+            // Convert to DTOs and calculate total sum for each product
+            var report = userBaskets.Select(a => new BasketReportByUsertResponseDto
+            {
+                UserId =model.UserId,
+                ProductId = a.Product.Id,
+                ProductName = a.Product.Name,
+                Count = a.Count,
+                TotalSum = a.Product.Price * a.Count // Assuming Product has a Price property
+            }).ToList();
+
+            return report;
+        }
+ 
+
+
     }
+
+
+
+
+
 }
+
+
+

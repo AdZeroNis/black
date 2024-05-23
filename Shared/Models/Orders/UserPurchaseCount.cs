@@ -8,7 +8,7 @@ namespace Shared.Models.Orders
 {
     public class UserPurchaseCount
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int PurchaseCount { get; set; }
     }
 }

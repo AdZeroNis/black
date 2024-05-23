@@ -9,7 +9,6 @@ namespace Shared.Models.User
     public class UserAddRequestDto
 
     {
-        public string Name { get; set; }
-        public string LastName { get; set; }
+        public string FullName { get; set; }
     }
 }

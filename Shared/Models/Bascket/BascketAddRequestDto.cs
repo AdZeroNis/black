@@ -12,7 +12,7 @@ namespace Shared.Models.Bascket
         /// <summary>
         /// شناسه کاربر
         /// </summary>
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         /// <summary>
         /// تعداد محصول
         /// </summary>

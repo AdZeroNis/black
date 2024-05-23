@@ -1,6 +1,7 @@
 ﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,7 @@ namespace IbulakStoreServer.Controllers
             _orderService = orderService;
             _context = context;
         }
+     
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
@@ -43,7 +45,7 @@ namespace IbulakStoreServer.Controllers
             return Ok(result);
         }
         [HttpGet("GetsByUser")]
-        public async Task<IActionResult> GetsByUser(int userId)
+        public async Task<IActionResult> GetsByUser(string userId)
         {
             var result = await _orderService.GetsByUserAsync(userId);
             return Ok(result);
@@ -109,12 +111,27 @@ namespace IbulakStoreServer.Controllers
             var result = await _orderService.SearchAsync(model);
             return Ok(result);
         }
-        [HttpGet("UserPurchaseCounts")]
-        public async Task<IActionResult> GetUserPurchaseCounts()
+        [HttpGet("OrdersReportByProduct")]
+        public async Task<IActionResult> OrdersReportByProduct([FromQuery] OrderReportByProductRequestDto model)
         {
-            var purchaseCounts = await _orderService.GetUserPurchaseCounts();
-            return Ok(purchaseCounts);
+            var result = await _orderService.OrdersReportByProductAsync(model);
+            return Ok(result);
         }
+        [HttpGet("OrdersTotalByProductName")]
+       public async Task<IActionResult> OrdersTotalByProductName([FromQuery]OrdersTotalByProductNameRequestDto model)
+      {
+            var result = await _orderService.OrdersTotalByProductNameAsync(model);
+             return Ok(result);
+       }
+        [HttpGet("OrderTotal")]
+        public async Task<IActionResult> OrderTotal([FromQuery] orderAllTotalRequestDto model)
+        {
+            var result = await _orderService.OrderTotalAsync(model);
+            return Ok(result);
+        }
+
+
+
 
 
     }
