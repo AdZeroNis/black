@@ -3,6 +3,8 @@ using IbulakStoreServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Shared.Models.Order;
 using Shared.Models.Orders;
+using Shared.Models.Product;
+using Shared.Models.User;
 using System.Reflection.Metadata.Ecma335;
 
 namespace IbulakStoreServer.Services
@@ -27,16 +29,6 @@ namespace IbulakStoreServer.Services
         {
             List<Order> orders = await _context.Orders.ToListAsync();
             return orders;
-        }
-        public async Task<List<Order>> GetsByProductAsync(int productId)
-        {
-            List<Order> orders = await _context.Orders.Where(order => order.ProductId == productId).ToListAsync();
-            return order;
-        }
-        public async Task<List<Order>> GetsByUserAsync(string userId)
-        {
-            List<Order> orders = await _context.Orders.Where(order => order.UserId == userId).ToListAsync();
-            return order;
         }
         public async Task AddAsync(Order order)
         {
@@ -89,8 +81,8 @@ namespace IbulakStoreServer.Services
         {
             IQueryable<Order> orders = _context.Orders
                .Where(a =>
-            (model.Count == null || a.Count <= model.Count)
-                               && (model.FromDate == null || a.CreatedAt >= model.FromDate)
+            
+                                (model.FromDate == null || a.CreatedAt >= model.FromDate)
                                && (model.ToDate == null || a.CreatedAt <= model.ToDate)
                                && (model.FullName == null || a.User.FullName.Contains(model.FullName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
@@ -129,6 +121,7 @@ namespace IbulakStoreServer.Services
 
             return searchResults;
         }
+        //فروش کالا در تاریخ مشخص
         public async Task<List<OrderReportByProductResponseDto>> OrdersReportByProductAsync(OrderReportByProductRequestDto model)
         {
             var ordersQuery = _context.Orders.Where(a =>
@@ -157,13 +150,14 @@ namespace IbulakStoreServer.Services
             var result = await productsQuery.ToListAsync();
             return result;
         }
+        //گرقتن اطلاعات فروش براساس اسم کالا
         public async Task<List<OrdersTotalByProductNameResponseDto>> OrdersTotalByProductNameAsync(OrdersTotalByProductNameRequestDto model)
         {
-            // First, filter products by name if a product name is provided
+
             var filteredProducts = _context.Products
                                              .Where(p => model.ProductName == null || p.Name.Contains(model.ProductName));
 
-            // Then, join orders with the filtered products to calculate the total sum for each product
+
             var ordersWithFilteredProducts = await _context.Orders
                                                              .Join(filteredProducts,
                                                                    order => order.ProductId,
@@ -174,23 +168,24 @@ namespace IbulakStoreServer.Services
                                                                  {
                                                                      ProductId = g.Key,
                                                                      TotalSum = g.Sum(x => x.Order.Price * x.Order.Count),
-                                                                     ProductName = g.FirstOrDefault().Product.Name // Set the ProductName property
+                                                                     ProductName = g.FirstOrDefault().Product.Name
                                                                  })
                                                                  .ToListAsync();
 
-            // Finally, convert the results to DTOs
+
             var result = ordersWithFilteredProducts.Select(o => new OrdersTotalByProductNameResponseDto
             {
                 ProductName = o.ProductName,
                 ProductId = o.ProductId,
-                TotalSum = o.TotalSum  // Ensure TotalSum has a default value
+                TotalSum = o.TotalSum
             }).ToList();
 
-            // Apply pagination
+
             result = result.Skip((model.PageNo) * model.PageSize).Take(model.PageSize).ToList();
 
             return result;
         }
+        // جمع فروش
         public async Task<List<OrderAllTotalResponseDto>> OrderTotalAsync(orderAllTotalRequestDto model)
         {
             var totalSum = await _context.Orders
@@ -212,6 +207,105 @@ namespace IbulakStoreServer.Services
 
             return result;
         }
+        public async Task<List<UserAddResponse>> GetByUserAsync(UserAddRequest model)
+        {
+            var userId = model.UserId;
+
+            var user = await _context.Users.FindAsync(userId);
+
+            if (user is null)
+            {
+                throw new Exception("User not found.");
+            }
+
+ 
+            var groupedOrders = await _context.Orders
+               .Where(o => o.UserId == userId)
+               .GroupBy(o => o.UserId)
+               .Select(g => g.First()) 
+               .ToListAsync();
+
+            var userResponses = groupedOrders.Select(o => new UserAddResponse
+            {
+                UserId = o.UserId,
+                FullName = o.User.FullName
+            }).ToList();
+
+            return userResponses;
+        }
+        public async Task<List<ProductResponseDto>> GetByProductAsync(ProductRequestDto model)
+        {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+
+            var productId = model.ProductId;
+
+
+            var product = await _context.Products.FindAsync(productId);
+
+            if (product == null)
+            {
+                throw new Exception("Product not found.");
+            }
+
+            var groupedBasket = await _context.Orders
+               .Where(o => o.ProductId == productId)
+               .GroupBy(o => o.ProductId)
+               .Select(g => g.FirstOrDefault())
+               .ToListAsync();
+
+
+            groupedBasket.RemoveAll(item => item == null);
+
+            var productResponses = groupedBasket.Where(o => o != null)
+               .Select(o => new ProductResponseDto
+               {
+                   ProductId = o.ProductId,
+                   Count = o.Count,
+                   CreatedAt = o.CreatedAt,
+                   Price = o.Product.Price,
+                   ProductImageFileName = o.Product?.ImageFileName,
+                   Description = o.Product?.Description,
+                   ProductName = o.Product?.Name
+               }).ToList();
+
+            return productResponses;
+        }
+
+        ///گرقتن تعداد کالای هر کاربر و تعداد کالاهای هرکاربر
+        public async Task<List<OrderReportByUsertResponseDto>> OrderReportByUserAsync(OrderReportByUserRequestDto model)
+        {
+
+            var userOeders = await _context.Orders
+               .Where(b => b.UserId == model.UserId)
+               .GroupBy(b => b.ProductId)
+               .Select(g => new
+               {
+                   g.Key, // ProductId
+                   Count = g.Sum(b => b.Count),
+                   Product = g.First().Product
+               })
+               .ToListAsync();
+
+
+            var report = userOeders.Select(a => new OrderReportByUsertResponseDto
+            {
+                UserId = model.UserId,
+
+                ProductId = a.Product.Id,
+                ProductName = a.Product.Name,
+                Count = a.Count,
+
+                TotalSum = a.Product.Price * a.Count
+            }).ToList();
+
+            return report;
+        }
+
+
+
     }
 }
 

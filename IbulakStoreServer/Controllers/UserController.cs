@@ -1,6 +1,7 @@
 ﻿using IbulakStoreServer.Data.Domain;
 using IbulakStoreServer.Data.Entities;
 using IbulakStoreServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.User;
@@ -18,7 +19,7 @@ namespace IbulakStoreServer.Controllers
         }
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
@@ -29,6 +30,7 @@ namespace IbulakStoreServer.Controllers
             }
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Gets()
         {
@@ -36,7 +38,7 @@ namespace IbulakStoreServer.Controllers
             return Ok(result);
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Add(UserAddRequestDto user)
         {
@@ -44,12 +46,14 @@ namespace IbulakStoreServer.Controllers
             await _userService.AddAsync(user);
             return Ok();
         }
+        [Authorize]
         [HttpPut]
         public async Task<IActionResult> Edit([FromBody] AppUser user)
         {
             await _userService.EditAsync(user);
             return Ok();
         }
+        [Authorize]
         [HttpDelete]
         public async Task<IActionResult> Delete(string id)
         {

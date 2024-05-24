@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Bascket;
 using Shared.Models.Baskets;
+using Shared.Models.Product;
+using Shared.Models.User;
 
 
 namespace IbulakStoreServer.Controllers
@@ -21,7 +23,7 @@ namespace IbulakStoreServer.Controllers
             _basketService = basketService;
             _productService = productService;
         }
-        
+        [Authorize(Roles = "Admin")]
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
@@ -29,29 +31,16 @@ namespace IbulakStoreServer.Controllers
             var result = await _basketService.GetAsync(id);
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Gets()
         {
             var result = await _basketService.GetsAsync();
             return Ok(result);
         }
-        [HttpGet("GetsByProduct")]
-        public async Task<IActionResult> GetsByProduct(int productId)
-        {
-            var result = await _basketService.GetsByProductAsync(productId);
-            return Ok(result);
-        }
-        [HttpGet("GetsByUser")]
-        public async Task<IActionResult> GetsByUser(string userId)
-        {
-            var result = await _basketService.GetsByUserAsync(userId);
-            return Ok(result);
-        }
-        /// <summary>
-        /// اضافه کردن یک محصول به سبد خرید
-        /// </summary>
-        /// <param name="basket">اطلاعات محصول</param>
-        /// <returns></returns>
+
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Add(BascketAddRequestDto basket)
         {
@@ -67,31 +56,48 @@ namespace IbulakStoreServer.Controllers
             await _basketService.AddAsync(basket);
             return Ok();
         }
+        [Authorize]
         [HttpPut]
         public async Task<IActionResult> Edit([FromBody] Basket basket)
         {
             await _basketService.EditAsync(basket);
             return Ok();
         }
+        [Authorize]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
             await _basketService.DeleteAsync(id);
             return Ok();
         }
+        [Authorize]
         [HttpGet("Search")]
         public async Task<IActionResult> Search([FromQuery] SearchRequestDto model)
         {
             var result = await _basketService.SearchAsync(model);
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet("BasketReportByUser")]
         public async Task<IActionResult> BasketReportByUser([FromQuery] BasketReportByUserRequestDto model)
         {
             var result = await _basketService.BasketReportByUserAsync(model);
             return Ok(result);
         }
-
+        [Authorize(Roles = "Admin")]
+        [HttpGet("GetByUser")]
+        public async Task<IActionResult> GetByUser([FromQuery] UserAddRequest model)
+        {
+            var result = await _basketService.GetByUserAsync(model);
+            return Ok(result);
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpGet("GetByProduct")]
+        public async Task<IActionResult> GetByProduct([FromQuery] ProductRequestDto model)
+        {
+            var result = await _basketService.GetByProductAsync(model);
+            return Ok(result);
+        }
 
     }
 }

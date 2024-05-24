@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Shared.Models.Order;
 using Shared.Models.Orders;
+using Shared.Models.Product;
+using Shared.Models.User;
 
 
 namespace IbulakStoreServer.Controllers
@@ -24,7 +26,7 @@ namespace IbulakStoreServer.Controllers
             _orderService = orderService;
             _context = context;
         }
-     
+        [Authorize(Roles = "Admin")]
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
@@ -32,30 +34,23 @@ namespace IbulakStoreServer.Controllers
             var result = await _orderService.GetAsync(id);
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Gets()
         {
             var result = await _orderService.GetsAsync();
             return Ok(result);
         }
-        [HttpGet("GetsByProduct")]
-        public async Task<IActionResult> GetsByProduct(int productId)
-        {
-            var result = await _orderService.GetsByProductAsync(productId);
-            return Ok(result);
-        }
-        [HttpGet("GetsByUser")]
-        public async Task<IActionResult> GetsByUser(string userId)
-        {
-            var result = await _orderService.GetsByUserAsync(userId);
-            return Ok(result);
-        }
+
+
+
         // [HttpPost]
         // public async Task<IActionResult> Add(Order order)
         // {
         //    await _orderService.AddAsync(order);
         //    return Ok();
         // }
+        [Authorize]
         [HttpPost("AddRange")]
         public async Task<IActionResult> AddRange(List<OrderAddRequestDto> orders)
         {
@@ -91,7 +86,7 @@ namespace IbulakStoreServer.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-
+        [Authorize]
         [HttpPut]
         public async Task<IActionResult> Edit([FromBody] Order order)
         {
@@ -104,33 +99,56 @@ namespace IbulakStoreServer.Controllers
             await _orderService.DeleteAsync(id);
             return Ok();
         }
-
+        [Authorize]
         [HttpGet("Search")]
         public async Task<IActionResult> Search([FromQuery] SearchRequestDto model)
         {
             var result = await _orderService.SearchAsync(model);
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet("OrdersReportByProduct")]
         public async Task<IActionResult> OrdersReportByProduct([FromQuery] OrderReportByProductRequestDto model)
         {
             var result = await _orderService.OrdersReportByProductAsync(model);
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet("OrdersTotalByProductName")]
        public async Task<IActionResult> OrdersTotalByProductName([FromQuery]OrdersTotalByProductNameRequestDto model)
       {
             var result = await _orderService.OrdersTotalByProductNameAsync(model);
              return Ok(result);
        }
+        [Authorize(Roles = "Admin")]
         [HttpGet("OrderTotal")]
         public async Task<IActionResult> OrderTotal([FromQuery] orderAllTotalRequestDto model)
         {
             var result = await _orderService.OrderTotalAsync(model);
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
+        [HttpGet("GetByUser")]
+        public async Task<IActionResult> GetByUser([FromQuery] UserAddRequest model)
+        {
+            var result = await _orderService.GetByUserAsync(model);
+            return Ok(result);
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpGet("GetByProduct")]
+        public async Task<IActionResult> GetByProduct([FromQuery] ProductRequestDto model)
+        {
+            var result = await _orderService.GetByProductAsync(model);
+            return Ok(result);
+        }
+        [Authorize(Roles = "Admin")]
 
-
+        [HttpGet("OrderReportByUser")]
+        public async Task<IActionResult> OrderReportByUser([FromQuery] OrderReportByUserRequestDto model)
+        {
+            var result = await _orderService.OrderReportByUserAsync(model);
+            return Ok(result);
+        }
 
 
 

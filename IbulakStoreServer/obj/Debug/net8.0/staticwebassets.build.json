@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RiDGWHCHQrWUmtI4vCPnuJ2BBSZ67FNE5PX2fTTl7aI=",
+  "Hash": "jOIGaE2qcNCyEJ8mEgFc2n3VpjK7e2cN9ofXxgbnwhY=",
   "Source": "IbulakStoreServer",
   "BasePath": "_content/IbulakStoreServer",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "IbulakStoreServer\\wwwroot",
       "Source": "IbulakStoreServer",
-      "ContentRoot": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\wwwroot\\",
       "BasePath": "_content/IbulakStoreServer",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\wwwroot\\2024\\4\\27\\about-mission.jpg",
+      "Identity": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\wwwroot\\2024\\4\\27\\about-mission.jpg",
       "SourceId": "IbulakStoreServer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\wwwroot\\",
       "BasePath": "_content/IbulakStoreServer",
       "RelativePath": "2024/4/27/about-mission.jpg",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\2024\\4\\27\\about-mission.jpg"
     },
     {
-      "Identity": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\wwwroot\\about-plan.jpg",
+      "Identity": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\wwwroot\\about-plan.jpg",
       "SourceId": "IbulakStoreServer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Sepid\\Desktop\\black\\IbulakStoreServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\source\\repos\\black\\IbulakStoreServer\\wwwroot\\",
       "BasePath": "_content/IbulakStoreServer",
       "RelativePath": "about-plan.jpg",
       "AssetKind": "All",

@@ -40,7 +40,6 @@ namespace IbulakStoreServer.Services
         }
         public async Task EditAsync(AppUser user)
         {
-            // Find the existing user by their Id
             var oldUser = await _context.Users.FindAsync(user.Id);
 
             if (oldUser == null)
@@ -48,13 +47,10 @@ namespace IbulakStoreServer.Services
                 throw new Exception("کاربری با این شناسه پیدا نشد.");
             }
 
-            // Update the properties of the found user
+          
             oldUser.FullName = user.FullName;
 
-            // Mark the user as modified so EF knows to update it in the database
             _context.Entry(oldUser).State = EntityState.Modified;
-
-            // Save changes to persist the updates
             await _context.SaveChangesAsync();
         }
 

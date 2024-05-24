@@ -127,14 +127,14 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
-    "Method": "GetsByProduct",
-    "RelativePath": "Basket/GetsByProduct",
+    "Method": "GetByProduct",
+    "RelativePath": "Basket/GetByProduct",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productId",
+        "Name": "ProductId",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -143,14 +143,14 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.BasketController",
-    "Method": "GetsByUser",
-    "RelativePath": "Basket/GetsByUser",
+    "Method": "GetByUser",
+    "RelativePath": "Basket/GetByUser",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
+        "Name": "UserId",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -353,14 +353,14 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.OrderController",
-    "Method": "GetsByProduct",
-    "RelativePath": "Order/GetsByProduct",
+    "Method": "GetByProduct",
+    "RelativePath": "Order/GetByProduct",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productId",
+        "Name": "ProductId",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -369,14 +369,40 @@
   },
   {
     "ContainingType": "IbulakStoreServer.Controllers.OrderController",
-    "Method": "GetsByUser",
-    "RelativePath": "Order/GetsByUser",
+    "Method": "GetByUser",
+    "RelativePath": "Order/GetByUser",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
+        "Name": "UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbulakStoreServer.Controllers.OrderController",
+    "Method": "OrderReportByUser",
+    "RelativePath": "Order/OrderReportByUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -644,11 +670,6 @@
       {
         "Name": "PageNo",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Count",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {

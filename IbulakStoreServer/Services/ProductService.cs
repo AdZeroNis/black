@@ -86,10 +86,11 @@ namespace IbulakStoreServer.Services
         }
         public async Task<List<SearchResponseDto>> SearchAsync(SearchRequestDto model)
         {
+            /*search in products*/
             IQueryable<Product> products = _context.Products
                .Where(a =>
-                    (model.Count == null || a.Count <= model.Count)
-                    && (model.FromDate == null || a.CreatedAt >= model.FromDate)
+                  
+                     (model.FromDate == null || a.CreatedAt >= model.FromDate)
                     && (model.ToDate == null || a.CreatedAt <= model.ToDate)
                     && (model.CategoryName == null || a.Category.Name.Contains(model.CategoryName))
                      && (model.ProductName == null || a.Name.Contains(model.ProductName))
@@ -117,38 +118,46 @@ namespace IbulakStoreServer.Services
                    ProductId = a.Id,
                    ProductName = a.Name,
                    CategoryId = a.CategoryId,
-                   Count = a.Count,
+                   Count=a.Count,
                    Price = a.Price,
                    CreatedAt = a.CreatedAt,
                    Description = a.Description,
                    CategoryName = a.Category.Name,
-                   CategoryImageFileName = a.Category.ImageFileName,
-                   ProductImageFileName = a.ImageFileName
+                   CategoryImageFileName=a.Category.ImageFileName,
+                   ProductImageFileName=a.ImageFileName
+
                })
                .ToListAsync();
 
             return searchResults;
         }
+        //کالا های موجود و نا موجود
         public async Task<List<ProductExitResponseDto>> ProductNotExitAsync(ProductExitRequestDto model)
         {
-            IQueryable<Product> products = _context.Products
-           .Where(a =>
-           a.Count == 0 &&
-           (model.ProductName == null || a.Name.Contains(model.ProductName)));
+            IQueryable<Product> productsQuery = _context.Products;
 
-            products = products.Skip(model.PageNo * model.PageSize).Take(model.PageSize);
+          
+            if (!string.IsNullOrEmpty(model.ProductName))
+            {
+                productsQuery = productsQuery.Where(a => a.Name.Contains(model.ProductName));
+            }
 
-            var searchResults = await products
-                .Select(a => new ProductExitResponseDto
-                {
-                    Availability = a.Count > 0 ? "موجود" : "ناموجود"
-                })
-                .ToListAsync();
+          
+            productsQuery = productsQuery.Skip((model.PageNo) * model.PageSize).Take(model.PageSize);
+
+           
+            var searchResults = await productsQuery
+               .Select(a => new ProductExitResponseDto
+               {
+                   Availability = a.Count == 0 ? "ناموجود" : "موجود"
+               })
+               .ToListAsync();
 
             return searchResults;
         }
 
+
     }
 
 
-    }
+}

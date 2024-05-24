@@ -6,6 +6,8 @@ using Shared.Models.Bascket;
 using Shared.Models.Baskets;
 using Shared.Models.Orders;
 using System.Reflection.Metadata;
+using Shared.Models.User;
+using Shared.Models.Product;
 
 namespace IbulakStoreServer.Services
 {
@@ -30,16 +32,7 @@ namespace IbulakStoreServer.Services
             List<Basket> baskets = await _context.Baskets.ToListAsync();
             return baskets;
         }
-        public async Task<List<Basket>> GetsByProductAsync(int productId)
-        {
-            List<Basket> baskets = await _context.Baskets.Where(basket => basket.ProductId == ProductId).ToListAsync();
-            return basket;
-        }
-        public async Task<List<Basket>> GetsByUserAsync(string userId)
-        {
-            List<Basket> baskets = await _context.Baskets.Where(basket => basket.UserId == userId).ToListAsync();
-            return basket;
-        }
+
         public async Task AddAsync(BascketAddRequestDto model)
         {
             Basket basket = new Basket
@@ -75,12 +68,13 @@ namespace IbulakStoreServer.Services
             _context.Baskets.Remove(basket);
             await _context.SaveChangesAsync();
         }
+        //سرج در سبد خرید
         public async Task<List<Shared.Models.Baskets.SearchResponseDto>> SearchAsync(Shared.Models.Baskets.SearchRequestDto model)
         {
             IQueryable<Basket> baskets = _context.Baskets
                .Where(a =>
-            (model.Count == null || a.Count <= model.Count)
-                               && (model.FullName == null || a.User.FullName.Contains(model.FullName))
+           
+                                (model.FullName == null || a.User.FullName.Contains(model.FullName))
                                && (model.ProductName == null || a.Product.Name.Contains(model.ProductName))
                                && (model.ProductCount == null || a.Product.Count <= model.ProductCount)
                                );
@@ -108,7 +102,7 @@ namespace IbulakStoreServer.Services
                    ProductName = a.Product.Name,
                    UserId = a.UserId,
                    Count = a.Count,
-                   ProductCount = a.Product.Count,
+                   
                    Description = a.Product.Description,
                    FullName = a.User.FullName,
                    ProductImageFileName = a.Product.ImageFileName
@@ -118,42 +112,107 @@ namespace IbulakStoreServer.Services
             return searchResults;
         }
 
-     
- public async Task<List<BasketReportByUsertResponseDto>> BasketReportByUserAsync(BasketReportByUserRequestDto model)
+        ///گرقتن تعداد کالای هر کاربر و تعداد کالاهای هرکاربر
+        public async Task<List<BasketReportByUsertResponseDto>> BasketReportByUserAsync(BasketReportByUserRequestDto model)
         {
-            // Query to get all baskets for the given user
+
             var userBaskets = await _context.Baskets
                .Where(b => b.UserId == model.UserId)
-               .GroupBy(b => b.ProductId) // Group by ProductId
+               .GroupBy(b => b.ProductId)
                .Select(g => new
                {
                    g.Key, // ProductId
-                   Count = g.Sum(b => b.Count), // Sum of counts for each product
-                   Product = g.First().Product // Assuming each product ID is unique within the user's basket
+                   Count = g.Sum(b => b.Count),
+                   Product = g.First().Product
                })
                .ToListAsync();
 
-            // Convert to DTOs and calculate total sum for each product
+
             var report = userBaskets.Select(a => new BasketReportByUsertResponseDto
             {
-                UserId =model.UserId,
+                UserId = model.UserId,
+
                 ProductId = a.Product.Id,
                 ProductName = a.Product.Name,
                 Count = a.Count,
-                TotalSum = a.Product.Price * a.Count // Assuming Product has a Price property
+
+                TotalSum = a.Product.Price * a.Count
             }).ToList();
 
             return report;
         }
- 
+        public async Task<List<UserAddResponse>> GetByUserAsync(UserAddRequest model)
+        {
+            var userId = model.UserId;
+
+            var user = await _context.Users.FindAsync(userId);
+
+            if (user is null)
+            {
+                throw new Exception("User not found.");
+            }
+
+
+            var groupedOrders = await _context.Baskets
+               .Where(o => o.UserId == userId)
+               .GroupBy(o => o.UserId)
+               .Select(g => g.First())
+               .ToListAsync();
+
+            var userResponses = groupedOrders.Select(o => new UserAddResponse
+            {
+                UserId = o.UserId,
+                FullName = o.User.FullName
+            }).ToList();
+
+            return userResponses;
+        }
+        public async Task<List<ProductResponseDto>> GetByProductAsync(ProductRequestDto model)
+        {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+
+            var productId = model.ProductId;
+
+        
+            var product = await _context.Products.FindAsync(productId); 
+
+            if (product == null)
+            {
+                throw new Exception("Product not found.");
+            }
+
+            var groupedBasket = await _context.Baskets
+               .Where(o => o.ProductId == productId)
+               .GroupBy(o => o.ProductId)
+               .Select(g => g.FirstOrDefault()) 
+               .ToListAsync();
+
+            
+            groupedBasket.RemoveAll(item => item == null);
+
+            var productResponses = groupedBasket.Where(o => o != null) 
+               .Select(o => new ProductResponseDto
+               {
+                   ProductId = o.ProductId,
+                   Count = o.Count,
+                   CreatedAt = o.CreatedAt,
+                   Price = o.Product.Price, 
+                   ProductImageFileName = o.Product?.ImageFileName,
+                   Description = o.Product?.Description,
+                   ProductName = o.Product?.Name 
+               }).ToList();
+
+            return productResponses;
+        }
+
+
+
 
 
     }
-
-
-
-
-
 }
 
 

@@ -10,5 +10,6 @@ namespace Shared.Models.User
 
     {
         public string FullName { get; set; }
+       
     }
 }

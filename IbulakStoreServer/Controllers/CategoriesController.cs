@@ -18,7 +18,7 @@ namespace IbulakStoreServer.Controllers
         {
             _categoryService=categoryService;
         }
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
@@ -26,6 +26,7 @@ namespace IbulakStoreServer.Controllers
             var result = await _categoryService.GetAsync(id);
             return Ok(result);
         }
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Gets()
         {
@@ -40,12 +41,14 @@ namespace IbulakStoreServer.Controllers
             await _categoryService.AddAsync(category);
             return Ok();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         public async Task<IActionResult> Edit([FromBody] Category category)
         {
             await _categoryService.EditAsync(category);
             return Ok();
         }
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

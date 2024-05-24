@@ -7,7 +7,7 @@ namespace IbulakStoreServer.Data.Entities
     {
 
         public int Id { get; set; }
-        [ForeignKey("User")]
+        [ForeignKey("AppUser")]
         public string UserId { get; set; }
         public int Count { get; set; }
         [ForeignKey("Product")]

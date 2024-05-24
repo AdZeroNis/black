@@ -10,7 +10,7 @@ namespace Shared.Models.Baskets
     {
         public int PageSize { get; set; }
         public int PageNo { get; set; }
-        public int? Count { get; set; }
+        
         public string? FullName { get; set; }
         public string? ProductName { get; set; }
         public string? SortBy { get; set; }

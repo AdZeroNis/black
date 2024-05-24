@@ -89,14 +89,14 @@ namespace IbulakStoreServer.Migrations
                         {
                             Id = "2426167f-842e-4933-ae72-d8dfe34abf78",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b5acdc6d-2bba-4b92-946e-d4356c793e98",
+                            ConcurrencyStamp = "86b24d6e-10f3-4409-8197-f1e939138b2c",
                             Email = "shaghayeghkrimi2923@gmail.com",
                             EmailConfirmed = true,
                             FullName = "شقایق کریمی",
                             LockoutEnabled = false,
                             NormalizedEmail = "shaghayeghkrimi2923@gmail.com",
                             NormalizedUserName = "09119660028",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDBL6s6JPZ0lCgaL2YPo3rYMzSNK4VNOMBiGKyzhhz+urcEehSki9GWvw44OpedyYg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOf1OyYNgh4/duDwVL46wK6SGbULEKqgQZzn7GhwPPWeLzxlRlIwxB1BoS2eGMQIQA==",
                             PhoneNumberConfirmed = true,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -253,7 +253,7 @@ namespace IbulakStoreServer.Migrations
                         },
                         new
                         {
-                            Id = "cfad0d31-c0e8-41d2-894f-f27320d55f47",
+                            Id = "22e56f43-6563-4372-b9bf-27e1282273ac",
                             Name = "User",
                             NormalizedName = "USER"
                         });

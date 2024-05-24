@@ -5,7 +5,7 @@ namespace IbulakStoreServer.Data.Entities
     public class Order
     {
         public int Id { get; set; }
-        [ForeignKey("User")]
+        [ForeignKey("AppUser")]
         public string UserId { get; set; }
         public int Price { get; set; }
         public int Count { get; set; }

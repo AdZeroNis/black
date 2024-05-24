@@ -16,7 +16,6 @@ namespace Shared.Models.Baskets
         public string ProductImageFileName { get; set; }
         public string UserId { get; set; }
         public string FullName { get; set; }
-       
-        public int ProductCount { get; set; }
+  
     }
 }

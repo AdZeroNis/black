@@ -10,7 +10,7 @@ namespace Shared.Models.Products
     {
         public int PageSize { get; set; }
         public int PageNo { get; set; }
-        public int? Count { get; set; }
+       
         public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }
         public string? CategoryName { get; set; }
